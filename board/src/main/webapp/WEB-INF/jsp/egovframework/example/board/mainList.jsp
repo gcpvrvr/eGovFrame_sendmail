@@ -27,7 +27,7 @@
        		  </form>
        		</div>
       		<div class="panel-body">
-      		   <form class="form-inline" action="/search.do">
+      		   <form class="form-inline" action="/mainList.do">
        			  <div class="form-group">
          			 <label for="searchName">제목:</label>
         		     <input type="text" class="form-control" id="searchName">
