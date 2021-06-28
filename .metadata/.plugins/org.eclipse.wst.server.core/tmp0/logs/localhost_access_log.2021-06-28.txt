@@ -9,3 +9,14 @@
 0:0:0:0:0:0:0:1 - - [28/Jun/2021:11:43:22 +0900] "GET /images/egovframework/cmmn/btn_page_next10.gif HTTP/1.1" 200 108
 0:0:0:0:0:0:0:1 - - [28/Jun/2021:11:43:22 +0900] "GET /images/egovframework/example/btn_bg_l.gif HTTP/1.1" 200 1716
 0:0:0:0:0:0:0:1 - - [28/Jun/2021:11:43:22 +0900] "GET /images/egovframework/example/th_bg.gif HTTP/1.1" 200 283
+127.0.0.1 - - [28/Jun/2021:13:10:43 +0900] "GET / HTTP/1.1" 200 11211
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET / HTTP/1.1" 200 10815
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /css/egovframework/sample.css HTTP/1.1" 200 10013
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /images/egovframework/example/title_dot.gif HTTP/1.1" 200 281
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /images/egovframework/example/btn_bg_r.gif HTTP/1.1" 200 286
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /images/egovframework/cmmn/btn_page_pre10.gif HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /images/egovframework/cmmn/btn_page_next1.gif HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /images/egovframework/cmmn/btn_page_pre1.gif HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /images/egovframework/cmmn/btn_page_next10.gif HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /images/egovframework/example/btn_bg_l.gif HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:10:44 +0900] "GET /images/egovframework/example/th_bg.gif HTTP/1.1" 304 -
