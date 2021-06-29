@@ -21,7 +21,7 @@
 
 </head>
 <div class="container">
-	<h1>상세화면</h1>
+	<h1>메인화면</h1>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<label for="">생각중:</label>
@@ -50,13 +50,35 @@
 				</div>
 			</form>
 		</div>
-
 		<div class="panel-footer">
 			<button type="button" class="btn btn-default">수정</button>
 			<button type="button" class="btn btn-default">삭제</button>
-			<button type="button" class="btn btn-default" onclick="cancel();">목록</button>
+			<button type="button" class="btn btn-default" onclick="list();">목록</button>
 		</div>
-
+	</div>
+	<div class="well well-sm">작성자/작성일</div>
+	<div class="well well-lg">
+		<form class="form-horizontal" method="post" action="/reply.do">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">작성자/작성일:</label>
+				<div class="col-sm-10 control-label" style="text-align: left;">
+					<input type="text" class="form-control" id="writer" name="writer"
+						placeholder="작성자를 입력하세요" maxLength="15"
+						style="float: left; width: 40%"> <input type="text"
+						class="form-control" id="indate" name="indate"
+						placeholder="작성일을 입력하세요" maxLength="10"
+						style="float: left; width: 40%">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">내용:</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" rows="3" id="reply" name="reply"
+						maxlength="300"></textarea>
+				</div>
+			</div>
+			<button type="button" class="btn btn-default">작성</button>
+		</form>
 	</div>
 </div>
 </html>
