@@ -5,3 +5,6 @@
 1624854125062	Delete resource 'test'
 1624855275077	Delete resource 'Servers'
 1624855283496	Rename resource 'Servers2'
+1624928852800	Delete resource 'board2'
+1624928921801	Delete resource 'board/src/main/webapp/WEB-INF/jsp/egovframework/example/board/mgmt.jsp'
+1624929504733	Delete resource 'board'
