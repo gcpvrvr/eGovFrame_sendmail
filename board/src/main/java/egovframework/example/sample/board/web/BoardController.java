@@ -10,4 +10,16 @@ public class BoardController {
 	public String list(ModelMap model) throws Exception {
 	return "/board/mainList";
 	}
+	
+	@RequestMapping(value = "/mgmt.do")
+	public String mgmg(ModelMap model) throws Exception {  
+	return "/board/mgmt";
+	}
+	
+	@RequestMapping(value = "/view.do")
+	public String view(ModelMap model) throws Exception {
+	return "/board/view";
+	}
 }
+
+
