@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package egovframework.example.sample.board.service.impl;
+package egovframework.example.sample.board.service;
 
 import egovframework.example.sample.service.SampleDefaultVO;
 
@@ -42,9 +42,31 @@ public class BoardVO extends SampleDefaultVO {
 	private String writer;  
 	private String writerNm;  
 	private String indate;
+	
 	private String seq;
 	private String reply;
+	
 	private String filename;
+	
+	
+	
+	private String userId;
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	private String password;
+	
+	
+	
 	public String getIdx() {
 		return idx;
 	}
@@ -106,4 +128,5 @@ public class BoardVO extends SampleDefaultVO {
 		this.filename = filename;
 	}
 	
+
 }

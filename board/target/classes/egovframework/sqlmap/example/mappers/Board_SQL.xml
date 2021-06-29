@@ -11,84 +11,96 @@
 <result property="indate" column="userindateyn"/>
 </resultMap>
 
-	<insert id="insertSample" parameterType="SampleVO">
+	<insert id="insertBoard" parameterType="boardVO">
 
-			INSERT INTO SAMPLE
-				( ID
-				  , NAME
-				  , DESCRIPTION
-				  , USE_YN
-				  , REG_USER )
-			VALUES ( #{id}
-				  , #{name}
-				  , #{description}
-				  , #{useYn}
-				  , #{regUser} )
+			INSERT INTO TBL_BOARD
+			( IDX
+			  , TITLE
+			  , CONTENTS
+			  , COUNT
+			  , WRITER
+			  , INDATE )
+			VALUES ( #{idx, jdbcType=VARCHAR}
+			  , #{title, jdbcType=VARCHAR}
+			  , #{contents, jdbcType=VARCHAR}
+			  , #{count, jdbcType=VARCHAR}
+			  , #{writer, jdbcType=VARCHAR}
+			  , SYSDATE() )
 
 	</insert>
 
-	<update id="updateSample">
+	<update id="updateBoard">
 
-			UPDATE SAMPLE
-			SET ID=#{id}
-				, NAME=#{name}
-				, DESCRIPTION=#{description}
-				, USE_YN=#{useYn}
-				  WHERE ID=#{id}
+			UPDATE TBL_BOARD
+			SET TITLE=#{id}
+			, CONTENTS=#{title, jdbcType=VARCHAR}
+			, DESCRIPTION=#{contents, jdbcType=VARCHAR}
+			  WHERE IDX=#{idx}
 
 	</update>
 
-	<delete id="deleteSample">
+	<delete id="deleteBoard">
 
-			DELETE FROM SAMPLE
-			WHERE ID=#{id}
+			DELETE FROM TBL_BOARD
+			WHERE IDX=#{idx}
 
 	</delete>
 
-	<select id="selectSample" resultMap="sample">
+	<select id="selectBoard" resultMap="board">
 
 			SELECT
-				ID, NAME, DESCRIPTION, USE_YN, REG_USER
-			FROM SAMPLE
-			WHERE ID=#{id}
+			A.IDX as idx
+			, A.TITLE as title
+			, A.CONTENTS as contents
+			, A.COUNT as count
+			, A.WRITER as writer
+			, A.INDATE as indate
+			, B.USER_NAME as writerNm
+			FROM TBL_BOARD A LEFT JOIN TBL_USER B ON A.WRITER = B.USER_ID
+			WHERE A.IDX=#{idx}
 
 	</select>
 
-	<select id="selectSampleList" parameterType="searchVO" resultType="egovMap">
+	<select id="selectBoardList" parameterType="boardVO" resultType="egovMap">
 
 			SELECT
-				ID, NAME, DESCRIPTION, USE_YN, REG_USER
-			FROM SAMPLE
+			A.IDX as idx
+			  , A.TITLE as title
+			  , A.CONTENTS as contents
+			  , IFNULL(A.COUNT,0) as count
+			  , A.WRITER as writer
+			  , A.INDATE as indate
+			  , B.USER_NAME as writerNm
+			  , (SELECT COUNT(*) FROM TBL_REPLY X WHERE X.IDX=A.IDX) AS reply
+			FROM TBL_BOARD A LEFT JOIN TBL_USER B ON A.WRITER = B.USER_ID
 			WHERE 1=1
 			<if test="searchKeyword != null and searchKeyword != ''">
-		        <choose>
-		            <when test="searchCondition == 0">
-						AND	ID LIKE '%' || #{searchKeyword} || '%'
-					</when>
-		            <when test="searchCondition == 1">
-						AND	NAME LIKE '%' || #{searchKeyword} || '%'
-					</when>
-				</choose>
+			AND ( A.TITLE LIKE CONCAT('%', #{searchKeyword}, '%'))
+			            OR A.CONTENTS LIKE CONCAT('%', #{searchKeyword}, '%')
 			</if>
-			ORDER BY ID ASC
-			LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
-	</select>
+			ORDER BY A.IDX DESC
+			</select>
 
-	<select id="selectSampleListTotCnt" parameterType="searchVO" resultType="int">
+	<select id="selectBoardListTotCnt" parameterType="boardVO" resultType="int">
 
 			SELECT COUNT(*) totcnt
-			FROM SAMPLE
+			FROM TBL_BOARD A
 			WHERE 1=1
 			<if test="searchKeyword != null and searchKeyword != ''">
-		        <choose>
-		            <when test="searchCondition == 0">
-						AND ID LIKE '%' || #{searchKeyword} || '%'
-					</when>
-		            <when test="searchCondition == 1">
-						AND	NAME LIKE '%' || #{searchKeyword} || '%'
-					</when>
-				</choose>
-			</if>
+			AND ( A.TITLE LIKE CONCAT('%', #{searchKeyword}, '%'))
+	            OR A.CONTENTS LIKE CONCAT('%', #{searchKeyword}, '%')
+			</if>     
 	</select>
+	
+	<select id="selectLoginCheck" parameterType="boardVO" resultType="String">
+
+			SELECT USER_NAME
+			FROM TBL_USER
+			WHERE 1=1
+			AND USER_ID = #{userId}
+			AND PASSWORD = #{password}     
+	</select>
+	
+	
 
 </mapper>
