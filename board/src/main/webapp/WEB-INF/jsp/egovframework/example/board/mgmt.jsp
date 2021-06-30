@@ -76,7 +76,7 @@ $( document).ready( function(){
 					<label class="control-label col-sm-2" for="pwd">내용:</label>
 					<div class="col-sm-10">
 						<textarea class="form-control" rows="5" id="contents"
-							name="contents“ maxlength="1000"></textarea>
+							name="contents" maxlength="1000"></textarea>
 					</div>
 				</div>
 			</form>

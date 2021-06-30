@@ -102,10 +102,8 @@ $( document).ready( function(){
 					<tbody>
 						<c:forEach var="result" items="${resultList}" varStatus="status">
 							<tr>
-								<td><a href="javascript:view('${result.idx}');"><c:out
-											value="${result.idx}" /></a></td>
-								<td><a href="javascript:view('${result.idx}');"><c:out
-											value="${result.title}" /></a></td>
+								<td><a href="javascript:view('${result.idx}');"><c:out value="${result.idx}" /></a></td>
+								<td><a href="javascript:view('${result.idx}');"><c:out value="${result.title}" /></a></td>
 								<td><c:out value="${result.count}" /></td>
 								<td><c:out value="${result.reply}" /></td>
 								<td><c:out value="${result.writerNm}" /></td>
