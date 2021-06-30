@@ -51,8 +51,10 @@
 			</form>
 		</div>
 		<div class="panel-footer">
-			<button type="button" class="btn btn-default">수정</button>
-			<button type="button" class="btn btn-default">삭제</button>
+			<c:if test="${!empty sessionScope.userId }">
+				<button type="button" class="btn btn-default">수정</button>
+				<button type="button" class="btn btn-default">삭제</button>
+			</c:if>
 			<button type="button" class="btn btn-default" onclick="list();">목록</button>
 		</div>
 	</div>

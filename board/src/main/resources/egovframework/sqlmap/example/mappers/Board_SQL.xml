@@ -11,22 +11,23 @@
 <result property="indate" column="userindateyn"/>
 </resultMap>
 
-	<insert id="insertBoard" parameterType="boardVO">
+	<insert id="insertBoard" parameterType="BoardVO">
 
-			INSERT INTO TBL_BOARD
-			( IDX
-			  , TITLE
-			  , CONTENTS
-			  , COUNT
-			  , WRITER
-			  , INDATE )
-			VALUES ( #{idx, jdbcType=VARCHAR}
-			  , #{title, jdbcType=VARCHAR}
-			  , #{contents, jdbcType=VARCHAR}
-			  , #{count, jdbcType=VARCHAR}
-			  , #{writer, jdbcType=VARCHAR}
-			  , SYSDATE() )
-
+		INSERT INTO TBL_BOARD
+		( IDX
+		  , TITLE
+		  , CONTENTS
+		  , COUNT
+		  , WRITER
+		  , INDATE )
+		VALUES ( NULL
+		  , #{title, jdbcType=VARCHAR}
+		  , #{contents, jdbcType=VARCHAR}
+		  , #{count, jdbcType=VARCHAR}
+		  , #{writer, jdbcType=VARCHAR}
+		  , SYSDATE() )
+		
+		
 	</insert>
 
 	<update id="updateBoard">
@@ -61,25 +62,25 @@
 
 	</select>
 
-	<select id="selectBoardList" parameterType="boardVO" resultType="egovMap">
+	<select id="selectBoardList" parameterType="BoardVO" resultType="egovMap">
 
-			SELECT
-			A.IDX as idx
-			  , A.TITLE as title
-			  , A.CONTENTS as contents
-			  , IFNULL(A.COUNT,0) as count
-			  , A.WRITER as writer
-			  , A.INDATE as indate
-			  , B.USER_NAME as writerNm
-			  , (SELECT COUNT(*) FROM TBL_REPLY X WHERE X.IDX=A.IDX) AS reply
-			FROM TBL_BOARD A LEFT JOIN TBL_USER B ON A.WRITER = B.USER_ID
-			WHERE 1=1
-			<if test="searchKeyword != null and searchKeyword != ''">
+		SELECT
+		A.IDX as idx
+		  , A.TITLE as title
+		  , A.CONTENTS as contents
+		  , IFNULL(A.COUNT,0) as count
+		  , A.WRITER as writer
+		  , A.INDATE as indate
+		  , B.USER_NAME as writerNm
+		  , (SELECT COUNT(*) FROM TBL_REPLY X WHERE X.IDX=A.IDX) AS reply
+		FROM TBL_BOARD A LEFT JOIN TBL_USER B ON A.WRITER = B.USER_ID
+		WHERE 1=1
+		<if test="searchKeyword != null and searchKeyword != ''">
 			AND ( A.TITLE LIKE CONCAT('%', #{searchKeyword}, '%'))
-			            OR A.CONTENTS LIKE CONCAT('%', #{searchKeyword}, '%')
-			</if>
-			ORDER BY A.IDX DESC
-			</select>
+			OR A.CONTENTS LIKE CONCAT('%', #{searchKeyword}, '%')
+		</if>
+		ORDER BY A.IDX DESC
+		</select>
 
 	<select id="selectBoardListTotCnt" parameterType="boardVO" resultType="int">
 
@@ -87,7 +88,7 @@
 			FROM TBL_BOARD A
 			WHERE 1=1
 			<if test="searchKeyword != null and searchKeyword != ''">
-			AND ( A.TITLE LIKE CONCAT('%', #{searchKeyword}, '%'))
+				AND ( A.TITLE LIKE CONCAT('%', #{searchKeyword}, '%'))
 	            OR A.CONTENTS LIKE CONCAT('%', #{searchKeyword}, '%')
 			</if>     
 	</select>
@@ -101,14 +102,6 @@
 			AND PASSWORD = #{password}     
 	</select>
 	
-	
-	<select id="selectLoginCheck" parameterType="boardVO" resultType="String">
-			SELECT USER_NAME
-			FROM TBL_USER
-			WHERE 1=1
-			AND USER_ID = #{userId}
-			AND PASSWORD = #{password}
-	</select>
 	
 
 </mapper>

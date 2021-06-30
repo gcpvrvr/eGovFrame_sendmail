@@ -11,8 +11,32 @@
 <script src="/js/jquery-3.5.1.min.js"></script>
 <script src="/css/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javaScript" language="javascript" defer="defer">
+
+$( document).ready( function(){
+	$("#idx").attr("readonly",true);
+	$("#writerNm").attr("readonly",true);
+	$("#indate").attr("readonly",true);
+	})
 	function cancel() {
 		location.href = "<c:url value='/mainList.do'/>";
+	}
+	function add(){
+		if( $("#title").val()==''){
+		alert("제목을 입력하세요");
+		$("#title").focus();
+		return;
+		}
+		if( $("#contents").val() == '') {
+		alert("내용을 입력하세요");
+		$("#contents"). focus();
+		return;
+		}
+		if (!confirm("등록하시겠습니까?")){
+		return;
+		}
+	
+		document.boardRegForm.action = "<c:url value='/mgmt.do'/>?mode=add";
+		document.boardRegForm.submit();
 	}
 </script>
 
@@ -24,7 +48,7 @@
 			<label for="">생각중:</label>
 		</div>
 		<div class="panel-body">
-			<form class="form-horizontal" method=“post” action="/">
+			<form class="form-horizontal" id="boardRegForm" name="boardRegForm" method="post" action="/">
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="idx">게시물아이디:</label>
 					<div class="col-sm-10">
@@ -36,18 +60,18 @@
 					<label class="control-label col-sm-2" for="pwd">제목:</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="title"
-							name="title“ placeholder=" 제목을 입력하세요" maxLength="100">
+							name="title" placeholder=" 제목을 입력하세요" maxLength="100">
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="pwd">등록자/등록일:</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="writer" name="writer"
-							placeholder="등록자를 입력하세요" maxLength="15"> <input
-							type="text" class="form-control" id="indate" name="indate"
-							placeholder="등록일을 입력하세요" maxLength="10">
-					</div>
-				</div>
+				 <div class="form-group">
+				   <label class="control-label col-sm-2" for="pwd">등록자/등록일:</label>
+				   <input type="hidden" class="form-control" id="writer" name="writer"
+						placeholder="등록자를 입력하세요" maxLength="15" style="float:left; width:40%" value="${boardVO.writer }">
+				   <input type="text" class="form-control" id="writerNm" name="writerNm"
+						placeholder="등록자를 입력하세요" maxLength="15" style="float:left; width:40%" value="${boardVO.writerNm }">
+				   <input type="text" class="form-control" id="indate" name="indate"
+				      	placeholder="등록일을 입력하세요" maxLength="10" style="float:left;width:40%" value="${boardVO.indate }"> 
+				  </div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="pwd">내용:</label>
 					<div class="col-sm-10">
@@ -57,11 +81,13 @@
 				</div>
 			</form>
 		</div>
-		<div class="panel-footer">
-			<button type="button" class="btn btn-default">등록</button>
-			<button type="button" class="btn btn-default">수정</button>
-			<button type="button" class="btn btn-default" onclick="cancel();">취소</button>
-		</div>
+		 <div class="panel-footer">
+		 <c:if test="${!empty sessionScope.userId }">
+		    <button type="button" class ="btn btn default" onclick ="add();">등록</button>
+		    <button type="button" class="btn btn-default">수정</button>
+		    </c:if>
+		    <button type="button" class="btn btn-default" onclick="cancel();">취소</button>
+		 </div>
 	</div>
 </div>
 </html>

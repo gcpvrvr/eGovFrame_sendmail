@@ -43,6 +43,9 @@ $( document).ready( function(){
 		}
 		return true;
 	}
+	function out(){
+		location.href ="<c:url value='/logout.do'/>";
+		}
 	
 	
 	
@@ -54,7 +57,7 @@ $( document).ready( function(){
 		<div class="panel-heading">
 			<c:if
 				test="${sessionScope.userId ==null || sessionScope.userId == '' }">
-				<form class="form-inline" method="get" action="/login.do">
+				<form class="form-inline" method="post" action="/login.do">
 
 					<div class="form-group">
 						<label for="user_id">아이디:</label> <select class="form-control"
@@ -72,18 +75,16 @@ $( document).ready( function(){
 						onclick="return check();">로그인</button>
 				</form>
 			</c:if>
-			<c:if
-				test="${sessionScope.userId !=null && sessionScope.userId !='' }">
-${sessionScope.userName }님 환영합니다
-<button type="button" class="btn btn-default" onclick="out();">
-					로그아웃</button>
+			<c:if test="${sessionScope.userId !=null && sessionScope.userId !='' }">
+			${sessionScope.userName }님 환영합니다
+			<button type="button" class="btn btn-default" onclick="out();">로그아웃</button>
 			</c:if>
 		</div>
 		<div class="panel-body">
-			<form class="form-inline" action="/search.do">
+			<form class="form-inline" method="post" action="/mainList.do">
 				<div class="form-group">
-					<label for="searchName">제목:</label> <input type="text"
-						class="form-control" id="searchName">
+					<label for="searchKeyword">제목:</label> 
+					<input type="text" class="form-control" id="searchKeyword" name="searchKeyword">
 				</div>
 				<button type="submit" class="btn btn-default">검색</button>
 			</form>
@@ -99,21 +100,31 @@ ${sessionScope.userName }님 환영합니다
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td><a href="javascript:view();">1</a></td>
-							<td><a href="javascript:view();">안녕하세요. 게시판공지 입니다</a></td>
+						<c:forEach var="result" items="${resultList}" varStatus="status">
+							<tr>
+								<td><a href="javascript:view('${result.idx}');"><c:out
+											value="${result.idx}" /></a></td>
+								<td><a href="javascript:view('${result.idx}');"><c:out
+											value="${result.title}" /></a></td>
+								<td><c:out value="${result.count}" /></td>
+								<td><c:out value="${result.reply}" /></td>
+								<td><c:out value="${result.writerNm}" /></td>
 
-							<td>1</td>
-							<td>관리자</td>
-							<td>2020-05-24</td>
-						</tr>
+								<%--<td><c:out value="${result.indate }"/></td> --%>
+								<td><fmt:formatDate value="${result.indate}"
+										pattern="yyyy-MM-dd hh:mm:ss" /></td>
+							</tr>
+						</c:forEach>
+
 					</tbody>
 
 				</table>
 			</div>
 		</div>
 		<div class="panel-footer">
-			<button type="button" class="btn btn-default" onclick="add();">등록</button>
+			<c:if test="${!empty sessionScope.userId }">
+				<button type="button" class="btn btn-default" onclick="add();">등록</button>
+			</c:if>
 		</div>
 	</div>
 </div>
