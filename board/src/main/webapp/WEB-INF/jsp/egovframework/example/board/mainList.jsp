@@ -46,6 +46,9 @@ $( document).ready( function(){
 	function out(){
 		location.href ="<c:url value='/logout.do'/>";
 		}
+	function view(idx ){
+		location.href = "<c:url value='/view.do'/>?idx="+idx;
+		}
 	
 	
 	
@@ -105,12 +108,15 @@ $( document).ready( function(){
 								<td><a href="javascript:view('${result.idx}');"><c:out value="${result.idx}" /></a></td>
 								<td><a href="javascript:view('${result.idx}');"><c:out value="${result.title}" /></a></td>
 								<td><c:out value="${result.count}" /></td>
-								<td><c:out value="${result.reply}" /></td>
 								<td><c:out value="${result.writerNm}" /></td>
-
+								<td><c:out value="${result.indate}" /></td>
+								
+								<!--  혹시몰라 날짜부분 주석처리
 								<%--<td><c:out value="${result.indate }"/></td> --%>
 								<td><fmt:formatDate value="${result.indate}"
 										pattern="yyyy-MM-dd hh:mm:ss" /></td>
+								-->
+								
 							</tr>
 						</c:forEach>
 

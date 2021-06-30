@@ -8,7 +8,7 @@
 <result property="contents" column="contents"/>
 <result property="writer" column="writer"/>
 <result property="writerNm" column="writerNm"/>
-<result property="indate" column="userindateyn"/>
+<result property="indate" column="indate"/>
 </resultMap>
 
 	<insert id="insertBoard" parameterType="BoardVO">
@@ -50,15 +50,15 @@
 	<select id="selectBoard" resultMap="board">
 
 			SELECT
-			A.IDX as idx
-			, A.TITLE as title
-			, A.CONTENTS as contents
-			, A.COUNT as count
-			, A.WRITER as writer
-			, A.INDATE as indate
-			, B.USER_NAME as writerNm
+				A.IDX as idx
+				, A.TITLE as title
+				, A.CONTENTS as contents
+				, A.COUNT as count
+				, A.WRITER as writer
+				, A.INDATE as indate
+				, B.USER_NAME as writerNm
 			FROM TBL_BOARD A LEFT JOIN TBL_USER B ON A.WRITER = B.USER_ID
-			WHERE A.IDX=#{idx}
+			WHERE IDX=#{idx}
 
 	</select>
 
@@ -101,6 +101,22 @@
 			AND USER_ID = #{userId}
 			AND PASSWORD = #{password}     
 	</select>
+	
+	<!-- 댓글  -->
+	<insert id="insertReply" parameterType="boardVO">
+
+	INSERT INTO TBL_REPLY  ( IDX
+	, SEQ
+	, REPLY
+	, WRITER
+	, INDATE)  VALUES (#{idx}
+	, (SELECT IFNULL(MAX(X.SEQ)+1,1) FROM TBL_REPLY X WHERE X.IDX=#{idx})
+	, #{reply, jdbcType=VARCHAR}
+	, #{writer, jdbcType=VARCHAR}
+	, SYSDATE() )
+	
+	</insert>
+	
 	
 	
 
