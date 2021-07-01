@@ -70,4 +70,7 @@ int selectBoardListTotCnt(BoardVO boardVO);
 
 String selectLoginCheck(BoardVO vo);
 
+void insertReply(BoardVO vo) throws Exception;
+
+
 }

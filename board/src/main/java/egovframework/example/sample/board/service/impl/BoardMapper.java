@@ -85,9 +85,12 @@ public interface BoardMapper {
     * @exception
     */
    
-   
    int selectBoardListTotCnt(BoardVO searchVO);
    
    String selectLoginCheck(BoardVO searchVO);
+   
+   void insertReply(BoardVO vo) throws Exception;
+   
+   
    
 }

@@ -21,95 +21,98 @@ import egovframework.example.sample.board.service.impl.BoardMapper;
 @Controller
 public class BoardController {
 
-	@RequestMapping(value = "/mgmt.do", method =RequestMethod.GET)
-	public String mgmt(@ModelAttribute("boardVO") BoardVO boardVO, ModelMap model, HttpServletRequest request) throws Exception {
-	     SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-	     Calendar c1 = Calendar.getInstance();
-	     String strToday = sdf.format(c1.getTime());
-	     System.out.println("Today" + strToday);
+	@RequestMapping(value = "/mgmt.do", method = RequestMethod.GET)
+	public String mgmt(@ModelAttribute("boardVO") BoardVO boardVO, ModelMap model, HttpServletRequest request)
+			throws Exception {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		Calendar c1 = Calendar.getInstance();
+		String strToday = sdf.format(c1.getTime());
+		System.out.println("Today" + strToday);
 
-	//BoardVO boardVO = new BoardVO();
-	     boardVO.setIndate(strToday);
-	     boardVO.setWriter(request.getSession().getAttribute("userId").toString());
-	     boardVO.setWriterNm(request.getSession().getAttribute("userName").toString());
+		// BoardVO boardVO = new BoardVO();
+		boardVO.setIndate(strToday);
+		boardVO.setWriter(request.getSession().getAttribute("userId").toString());
+		boardVO.setWriterNm(request.getSession().getAttribute("userName").toString());
 
-	// 서버에서 가져오기
-	if(request.getAttribute("idx") != null) {
-	     boardVO = boardService.selectBoard(boardVO);
-	     model.addAttribute("boardVO", boardVO);
+		// 서버에서 가져오기
+		if (request.getAttribute("idx") != null) {
+			boardVO = boardService.selectBoard(boardVO);
+			model.addAttribute("boardVO", boardVO);
+		}
+
+		// 서버에서 가져온값을 화면에 맵핑
+
+		return "/board/mgmt";
 	}
 
-	// 서버에서 가져온값을 화면에 맵핑
-
-	return "/board/mgmt";
-	}
-	
-	@RequestMapping(value = "/mgmt.do", method=RequestMethod.POST)
+	@RequestMapping(value = "/mgmt.do", method = RequestMethod.POST)
 	public String mgmt2(@ModelAttribute("boardVO") BoardVO boardVO, ModelMap model) throws Exception {
 
-	boardService.insertBoard(boardVO);
-	return "redirect:/mainList.do";
+		boardService.insertBoard(boardVO);
+		return "redirect:/mainList.do";
 	}
 
 	@RequestMapping(value = "/view.do")
 	public String view(@ModelAttribute("boardVO") BoardVO boardVO, ModelMap model) throws Exception {
-	boardVO = boardService.selectBoard(boardVO);  model.addAttribute("boardVO", boardVO);
-	return "/board/view";
+		boardVO = boardService.selectBoard(boardVO);
+		model.addAttribute("boardVO", boardVO);
+		return "/board/view";
+	}
+
+	@RequestMapping(value = "/reply.do")
+	public String reply(@ModelAttribute("boardVO") BoardVO boardVO, ModelMap model) throws Exception {
+		boardService.insertReply(boardVO);
+		return "redirect:/view.do?idx=" + boardVO.getIdx();
 	}
 
 	@RequestMapping(value = "/login.do")
-	public String login(@RequestParam("user_id") String user_id,  
-	@RequestParam("password") String password,  
-	ModelMap model, HttpServletRequest request) throws Exception {
-	// HttpServletRequest request
-	// String aa = request.getParameter("user_id");  
-	System.out.println("userid:"+user_id);  
-	System.out.println("password:"+password);  
+	public String login(@RequestParam("user_id") String user_id, @RequestParam("password") String password,
+			ModelMap model, HttpServletRequest request) throws Exception {
+		// HttpServletRequest request
+		// String aa = request.getParameter("user_id");
+		System.out.println("userid:" + user_id);
+		System.out.println("password:" + password);
 
-	BoardVO boardVO = new BoardVO();
-	boardVO.setUserId(user_id);
-	boardVO.setPassword(password);
-	String user_name = boardService.selectLoginCheck(boardVO);
+		BoardVO boardVO = new BoardVO();
+		boardVO.setUserId(user_id);
+		boardVO.setPassword(password);
+		String user_name = boardService.selectLoginCheck(boardVO);
 
-	if(user_name != null && !"".equals(user_name)) {
-	 request.getSession().setAttribute("userId", user_id);
-	 request.getSession().setAttribute("userName", user_name);
-	 }else {
-	 request.getSession().setAttribute("userId", "");
-	 request.getSession().setAttribute("userName", "");
-	 model.addAttribute("msg", "사용자 정보가 올바르지 않습니다.");
-	 }
-	 return "redirect:mainList.do";
+		if (user_name != null && !"".equals(user_name)) {
+			request.getSession().setAttribute("userId", user_id);
+			request.getSession().setAttribute("userName", user_name);
+		} else {
+			request.getSession().setAttribute("userId", "");
+			request.getSession().setAttribute("userName", "");
+			model.addAttribute("msg", "사용자 정보가 올바르지 않습니다.");
+		}
+		return "redirect:mainList.do";
 
 	}
-	
+
 	@RequestMapping(value = "/logout.do")
 	public String logout(ModelMap model, HttpServletRequest request) throws Exception {
-	request.getSession().invalidate();
-	return "redirect:mainList.do";
+		request.getSession().invalidate();
+		return "redirect:mainList.do";
 	}
 
 	@RequestMapping(value = "/mainList.do")
 	public String list(@ModelAttribute("boardVO") BoardVO boardVO, ModelMap model) throws Exception {
 
-	List<?> list = boardService.selectBoardList(boardVO);
-	//resultlist에 list를 넣음
-	model.addAttribute("resultList", list);
+		List<?> list = boardService.selectBoardList(boardVO);
+		// resultlist에 list를 넣음
+		model.addAttribute("resultList", list);
 
-	int totCnt = boardService.selectBoardListTotCnt(boardVO);
+		int totCnt = boardService.selectBoardListTotCnt(boardVO);
 
-	return "/board/mainList";
+		return "/board/mainList";
 	}
 
 	@Resource(name = "boardService")
 	private BoardService boardService;
 
 	// TODO mybatis 사용
-	@Resource(name="boardMapper")
+	@Resource(name = "boardMapper")
 	private BoardMapper boardDAO;
 
-
 }
-
-
-
