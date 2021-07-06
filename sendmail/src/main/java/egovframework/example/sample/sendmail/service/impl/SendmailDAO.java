@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package egovframework.example.sample.service.impl;
+package egovframework.example.sample.sendmail.service.impl;
 
 import java.util.List;
 
-import egovframework.example.sample.service.SampleDefaultVO;
-import egovframework.example.sample.service.SampleVO;
-
-import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
-
 import org.springframework.stereotype.Repository;
+
+import egovframework.example.sample.sendmail.service.SendmailDefaultVO;
+import egovframework.example.sample.sendmail.service.SendmailVO;
+import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 
 /**
  * @Class Name : SampleDAO.java
@@ -41,8 +40,8 @@ import org.springframework.stereotype.Repository;
  *  Copyright (C) by MOPAS All right reserved.
  */
 
-@Repository("sampleDAO")
-public class SampleDAO extends EgovAbstractDAO {
+@Repository("sendmailDAO")
+public class SendmailDAO extends EgovAbstractDAO {
 
 	/**
 	 * 글을 등록한다.
@@ -50,38 +49,38 @@ public class SampleDAO extends EgovAbstractDAO {
 	 * @return 등록 결과
 	 * @exception Exception
 	 */
-	public String insertSample(SampleVO vo) throws Exception {
-		return (String) insert("sampleDAO.insertSample", vo);
+	public String insertSendmail(SendmailVO vo) throws Exception {
+		return (String) insert("sendmailDAO.insertSendmail", vo);
 	}
 
 	/**
 	 * 글을 수정한다.
-	 * @param vo - 수정할 정보가 담긴 SampleVO
+	 * @param vo - 수정할 정보가 담긴 SendmailVO
 	 * @return void형
 	 * @exception Exception
 	 */
-	public void updateSample(SampleVO vo) throws Exception {
-		update("sampleDAO.updateSample", vo);
+	public void updateSendmail(SendmailVO vo) throws Exception {
+		update("sendmailDAO.updateSendmail", vo);
 	}
 
 	/**
 	 * 글을 삭제한다.
-	 * @param vo - 삭제할 정보가 담긴 SampleVO
+	 * @param vo - 삭제할 정보가 담긴 SendmailVO
 	 * @return void형
 	 * @exception Exception
 	 */
-	public void deleteSample(SampleVO vo) throws Exception {
-		delete("sampleDAO.deleteSample", vo);
+	public void deleteSendmail(SendmailVO vo) throws Exception {
+		delete("sendmailDAO.deleteSendmail", vo);
 	}
 
 	/**
 	 * 글을 조회한다.
-	 * @param vo - 조회할 정보가 담긴 SampleVO
+	 * @param vo - 조회할 정보가 담긴 SendmailVO
 	 * @return 조회한 글
 	 * @exception Exception
 	 */
-	public SampleVO selectSample(SampleVO vo) throws Exception {
-		return (SampleVO) select("sampleDAO.selectSample", vo);
+	public SendmailVO selectSendmail(SendmailVO vo) throws Exception {
+		return (SendmailVO) select("sendmailDAO.selectSendmail", vo);
 	}
 
 	/**
@@ -90,8 +89,8 @@ public class SampleDAO extends EgovAbstractDAO {
 	 * @return 글 목록
 	 * @exception Exception
 	 */
-	public List<?> selectSampleList(SampleDefaultVO searchVO) throws Exception {
-		return list("sampleDAO.selectSampleList", searchVO);
+	public List<?> selectSendmailList(SendmailDefaultVO searchVO) throws Exception {
+		return list("sendmailDAO.selectSendmailList", searchVO);
 	}
 
 	/**
@@ -100,8 +99,8 @@ public class SampleDAO extends EgovAbstractDAO {
 	 * @return 글 총 갯수
 	 * @exception
 	 */
-	public int selectSampleListTotCnt(SampleDefaultVO searchVO) {
-		return (Integer) select("sampleDAO.selectSampleListTotCnt", searchVO);
+	public int selectSendmailListTotCnt(SendmailDefaultVO searchVO) {
+		return (Integer) select("sendmailDAO.selectSendmailListTotCnt", searchVO);
 	}
 
 }
