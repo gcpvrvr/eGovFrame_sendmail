@@ -33,37 +33,14 @@ import egovframework.example.sample.service.SampleDefaultVO;
  *
  *  Copyright (C) by MOPAS All right reserved.
  */
-public class SendmailVO extends SampleDefaultVO {
+public class SendmailVO extends SendmailDefaultVO {
 
 	private String idx;  
 	private String title;  
 	private String contents;  
-	private String count;  
-	private String writer;  
-	private String writerNm;  
+	private String sender;  
+	private String receiver;  
 	private String indate;
-	
-	private String seq;
-	private String reply;
-	
-	private String filename;
-	
-	
-	
-	private String userId;
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	private String password;
 	
 	
 	
@@ -85,23 +62,17 @@ public class SendmailVO extends SampleDefaultVO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	public String getCount() {
-		return count;
+	public String getSender() {
+		return sender;
 	}
-	public void setCount(String count) {
-		this.count = count;
+	public void setSender(String sender) {
+		this.sender = sender;
 	}
-	public String getWriter() {
-		return writer;
+	public String getReceiver() {
+		return receiver;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
-	public String getWriterNm() {
-		return writerNm;
-	}
-	public void setWriterNm(String writerNm) {
-		this.writerNm = writerNm;
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
 	}
 	public String getIndate() {
 		return indate;
@@ -109,24 +80,8 @@ public class SendmailVO extends SampleDefaultVO {
 	public void setIndate(String indate) {
 		this.indate = indate;
 	}
-	public String getSeq() {
-		return seq;
-	}
-	public void setSeq(String seq) {
-		this.seq = seq;
-	}
-	public String getReply() {
-		return reply;
-	}
-	public void setReply(String reply) {
-		this.reply = reply;
-	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
+
+	
 	
 
 }
