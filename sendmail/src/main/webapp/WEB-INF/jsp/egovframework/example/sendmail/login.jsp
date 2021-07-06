@@ -24,7 +24,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<%=request.getContextPath()%>/css/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/bootstrap/css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 

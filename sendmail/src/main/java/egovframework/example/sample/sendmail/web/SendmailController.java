@@ -22,5 +22,10 @@ public class SendmailController {
 	public String login() throws Exception {
 		return "/sendmail/login";
 	}
+	
+	@RequestMapping(value = "/mail.do")
+	public String mail() throws Exception {
+		return "/sendmail/mail";
+	}
 
 }
