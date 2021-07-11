@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_ddxTkN_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_ddxTkd_PEeu7D4RsdQZ8-A" bindingContexts="_ddyjp9_PEeu7D4RsdQZ8-A">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;Mail_SQL.xml&quot; tooltip=&quot;sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Mail_SQL.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Mail_SQL.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;index.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/index.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/webapp/index.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;server.xml&quot; tooltip=&quot;Servers/Tomcat v9.0 Server at localhost-config/server.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Servers/Tomcat v9.0 Server at localhost-config/server.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MailController.java&quot; tooltip=&quot;sendmail/src/main/java/egovframework/example/sendmail/web/MailController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/web/MailController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; tooltip=&quot;sendmail/pom.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/pom.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;write.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/write.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/write.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;sidebar.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/layout/sidebar.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/layout/sidebar.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.wst.server.ui.editor.input.factory&quot; id=&quot;org.eclipse.wst.server.ui.editor&quot; name=&quot;Tomcat v9.0 Server at localhost&quot; tooltip=&quot;Tomcat v9.0 Server at localhost&quot;>&#xD;&#xA;&lt;persistable server-id=&quot;Tomcat v9.0 Server at localhost&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MailService.java&quot; tooltip=&quot;sendmail/src/main/java/egovframework/example/sendmail/service/MailService.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/service/MailService.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; tooltip=&quot;SendMail/pom.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/pom.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;index.jsp&quot; tooltip=&quot;SendMail/src/main/webapp/index.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/webapp/index.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;web.xml&quot; tooltip=&quot;SendMail/src/main/webapp/WEB-INF/web.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/webapp/WEB-INF/web.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Main.java&quot; tooltip=&quot;SendMail/src/main/java/egovframework/example/sample/sendmail/Main.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/java/egovframework/example/sample/sendmail/Main.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;HomeController.java&quot; tooltip=&quot;SendMail/src/main/java/egovframework/example/sample/sendmail/HomeController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/java/egovframework/example/sample/sendmail/HomeController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;SendMail_SQL.xml&quot; tooltip=&quot;SendMail/src/main/resources/egovframework/sqlmap/example/mappers/SendMail_SQL.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/resources/egovframework/sqlmap/example/mappers/SendMail_SQL.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;EgovSample_Sample_SQL.xml&quot; tooltip=&quot;SendMail/src/main/resources/egovframework/sqlmap/example/mappers/EgovSample_Sample_SQL.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/resources/egovframework/sqlmap/example/mappers/EgovSample_Sample_SQL.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;Sendmail_SQL.xml&quot; tooltip=&quot;sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Sendmail_SQL.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Sendmail_SQL.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;SendmailVO.java&quot; tooltip=&quot;sendmail/src/main/java/egovframework/example/sample/sendmail/service/SendmailVO.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/java/egovframework/example/sample/sendmail/service/SendmailVO.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;SendmailController.java&quot; tooltip=&quot;sendmail/src/main/java/egovframework/example/sample/sendmail/web/SendmailController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/java/egovframework/example/sample/sendmail/web/SendmailController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.wst.server.ui.editor.input.factory&quot; id=&quot;org.eclipse.wst.server.ui.editor&quot; name=&quot;Tomcat v9.0 Server at localhost&quot; tooltip=&quot;Tomcat v9.0 Server at localhost&quot;>&#xD;&#xA;&lt;persistable server-id=&quot;Tomcat v9.0 Server at localhost&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;Mail_SQL.xml&quot; tooltip=&quot;sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Mail_SQL.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Mail_SQL.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;index.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/index.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/webapp/index.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;server.xml&quot; tooltip=&quot;Servers/Tomcat v9.0 Server at localhost-config/server.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Servers/Tomcat v9.0 Server at localhost-config/server.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MailController.java&quot; tooltip=&quot;sendmail/src/main/java/egovframework/example/sendmail/web/MailController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/web/MailController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; tooltip=&quot;sendmail/pom.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/pom.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;write.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/write.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/write.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;sidebar.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/layout/sidebar.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/layout/sidebar.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MailService.java&quot; tooltip=&quot;sendmail/src/main/java/egovframework/example/sendmail/service/MailService.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/service/MailService.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; tooltip=&quot;SendMail/pom.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/pom.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;index.jsp&quot; tooltip=&quot;SendMail/src/main/webapp/index.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/webapp/index.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;web.xml&quot; tooltip=&quot;SendMail/src/main/webapp/WEB-INF/web.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/webapp/WEB-INF/web.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Main.java&quot; tooltip=&quot;SendMail/src/main/java/egovframework/example/sample/sendmail/Main.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/java/egovframework/example/sample/sendmail/Main.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;HomeController.java&quot; tooltip=&quot;SendMail/src/main/java/egovframework/example/sample/sendmail/HomeController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/java/egovframework/example/sample/sendmail/HomeController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;SendMail_SQL.xml&quot; tooltip=&quot;SendMail/src/main/resources/egovframework/sqlmap/example/mappers/SendMail_SQL.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/resources/egovframework/sqlmap/example/mappers/SendMail_SQL.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;EgovSample_Sample_SQL.xml&quot; tooltip=&quot;SendMail/src/main/resources/egovframework/sqlmap/example/mappers/EgovSample_Sample_SQL.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/SendMail/src/main/resources/egovframework/sqlmap/example/mappers/EgovSample_Sample_SQL.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;Sendmail_SQL.xml&quot; tooltip=&quot;sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Sendmail_SQL.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Sendmail_SQL.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;SendmailVO.java&quot; tooltip=&quot;sendmail/src/main/java/egovframework/example/sample/sendmail/service/SendmailVO.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sendmail/src/main/java/egovframework/example/sample/sendmail/service/SendmailVO.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_ddxTkd_PEeu7D4RsdQZ8-A" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_ddxTkt_PEeu7D4RsdQZ8-A" label="%trimmedwindow.label.eclipseSDK" x="1317" y="2" width="1248" height="1219">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_ddxTkd_PEeu7D4RsdQZ8-A" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_ddxTkt_PEeu7D4RsdQZ8-A" label="%trimmedwindow.label.eclipseSDK" x="306" y="105" width="1248" height="842">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -620,10 +620,11 @@
           <tags>persp.newWizSC:egovframework.mdev.imp.commngt.wizards.AddMobileCommngtWizard</tags>
           <tags>persp.newWizSC:com.springsource.sts.wizard.template</tags>
           <tags>persp.newWizSC:egovframework.bdev.tst.wizards.EgovBatchJobTestWizard</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT7t_PEeu7D4RsdQZ8-A" selectedElement="_ddxT-N_PEeu7D4RsdQZ8-A" horizontal="true">
-            <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT79_PEeu7D4RsdQZ8-A" containerData="1521" selectedElement="_ddxT8N_PEeu7D4RsdQZ8-A">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT7t_PEeu7D4RsdQZ8-A" selectedElement="_ddxT79_PEeu7D4RsdQZ8-A" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT79_PEeu7D4RsdQZ8-A" containerData="2190" selectedElement="_ddxT8N_PEeu7D4RsdQZ8-A">
               <children xsi:type="basic:PartStack" xmi:id="_ddxT8N_PEeu7D4RsdQZ8-A" elementId="left" containerData="6000" selectedElement="_ddxT89_PEeu7D4RsdQZ8-A">
                 <tags>org.eclipse.e4.primaryNavigationStack</tags>
+                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_ddxT8d_PEeu7D4RsdQZ8-A" elementId="org.eclipse.jdt.ui.PackageExplorer" ref="_ddx7nd_PEeu7D4RsdQZ8-A" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:Java</tags>
@@ -653,8 +654,8 @@
                 </children>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT-N_PEeu7D4RsdQZ8-A" containerData="8479" selectedElement="_ddxT-d_PEeu7D4RsdQZ8-A">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT-d_PEeu7D4RsdQZ8-A" containerData="6715" selectedElement="_ddxT-t_PEeu7D4RsdQZ8-A" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT-N_PEeu7D4RsdQZ8-A" containerData="7810" selectedElement="_ddxUBt_PEeu7D4RsdQZ8-A">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT-d_PEeu7D4RsdQZ8-A" containerData="7467" selectedElement="_ddxT-t_PEeu7D4RsdQZ8-A" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_ddxT-t_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.editorss" containerData="8855" ref="_ddx62d_PEeu7D4RsdQZ8-A"/>
                 <children xsi:type="basic:PartSashContainer" xmi:id="_ddxT-9_PEeu7D4RsdQZ8-A" containerData="1145" selectedElement="_ddxT_N_PEeu7D4RsdQZ8-A">
                   <children xsi:type="basic:PartStack" xmi:id="_ddxT_N_PEeu7D4RsdQZ8-A" elementId="org.eclipse.mylyn.tasks.ui.views.tasksMStack" containerData="5000" selectedElement="_ddxT_d_PEeu7D4RsdQZ8-A">
@@ -692,7 +693,7 @@
                   </children>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_ddxUBt_PEeu7D4RsdQZ8-A" elementId="bottom" containerData="3285" selectedElement="_ddxUDt_PEeu7D4RsdQZ8-A">
+              <children xsi:type="basic:PartStack" xmi:id="_ddxUBt_PEeu7D4RsdQZ8-A" elementId="bottom" containerData="2533" selectedElement="_ddxUDt_PEeu7D4RsdQZ8-A">
                 <tags>org.eclipse.e4.secondaryDataStack</tags>
                 <tags>General</tags>
                 <tags>Server</tags>
@@ -784,74 +785,9 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_ddx62d_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.editorss" selectedElement="_ddx62t_PEeu7D4RsdQZ8-A">
-      <children xsi:type="basic:PartStack" xmi:id="_ddx62t_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_hWmVUOCKEeu6ZIV-4NokDA">
+      <children xsi:type="basic:PartStack" xmi:id="_ddx62t_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.primaryDataStack">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_ddx629_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="sidebar.jsp" iconURI="platform:/plugin/org.eclipse.jst.jsp.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;sidebar.jsp&quot; partName=&quot;sidebar.jsp&quot; title=&quot;sidebar.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/layout/sidebar.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/layout/sidebar.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2276&quot; selectionTopPixel=&quot;924&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jst.jsp.core.jspsource.source</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_ddx63N_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="write.jsp" iconURI="platform:/plugin/org.eclipse.jst.jsp.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;write.jsp&quot; partName=&quot;write.jsp&quot; title=&quot;write.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/write.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/write.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;4&quot; selectionOffset=&quot;1727&quot; selectionTopPixel=&quot;360&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jst.jsp.core.jspsource.source</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_ddx63d_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="index.jsp" iconURI="platform:/plugin/org.eclipse.jst.jsp.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;index.jsp&quot; partName=&quot;index.jsp&quot; title=&quot;index.jsp&quot; tooltip=&quot;sendmail/src/main/webapp/index.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/sendmail/src/main/webapp/index.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;257&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jst.jsp.core.jspsource.source</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_ddx63t_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="MailController.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MailController.java&quot; partName=&quot;MailController.java&quot; title=&quot;MailController.java&quot; tooltip=&quot;sendmail/src/main/java/egovframework/example/sendmail/web/MailController.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/web/MailController.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;6198&quot; selectionTopPixel=&quot;3726&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_ddx639_PEeu7D4RsdQZ8-A" elementId="#CompilationUnitEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CompilationUnitEditorContext</tags>
-            <tags>popup:org.eclipse.jdt.ui.CompilationUnitEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_ddx64N_PEeu7D4RsdQZ8-A" elementId="#CompilationUnitRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CompilationUnitRulerContext</tags>
-            <tags>popup:org.eclipse.jdt.ui.CompilationUnitEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_ddx64d_PEeu7D4RsdQZ8-A" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_ddx64t_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Basic Sample" iconURI="platform:/plugin/org.eclipse.ui.browser/icons/obj16/internal_browser.png" closeable="true">
-          <tags>Editor</tags>
-          <tags>org.eclipse.ui.browser.editor</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_ddx649_PEeu7D4RsdQZ8-A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="http://localhost:8888/sendmail/" iconURI="platform:/plugin/org.eclipse.ui.browser/icons/obj16/internal_browser.png" closeable="true">
-          <tags>Editor</tags>
-          <tags>org.eclipse.ui.browser.editor</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_-1q_QOCGEeu6ZIV-4NokDA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="server.xml" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/xmldoc.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;server.xml&quot; partName=&quot;server.xml&quot; title=&quot;server.xml&quot; tooltip=&quot;Servers/Tomcat v9.0 Server at localhost-config/server.xml&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Servers/Tomcat v9.0 Server at localhost-config/server.xml&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;7426&quot; selectionTopPixel=&quot;2687&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_hWmVUOCKEeu6ZIV-4NokDA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Mail_SQL.xml" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/xmldoc.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;Mail_SQL.xml&quot; partName=&quot;Mail_SQL.xml&quot; title=&quot;Mail_SQL.xml&quot; tooltip=&quot;sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Mail_SQL.xml&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Mail_SQL.xml&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3837&quot; selectionTopPixel=&quot;2775&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart</tags>
-          <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
-        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_ddx65N_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" closeable="true">
@@ -869,9 +805,11 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_ddx659_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.views.ResourceNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Navigator" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/filenav_nav.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.views.navigator.ResourceNavigator"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view LINK_NAVIGATOR_TO_EDITOR=&quot;1&quot; sorter=&quot;1&quot;>&#xD;&#xA;&lt;filters>&#xD;&#xA;&lt;filter element=&quot;*.class&quot; isEnabled=&quot;false&quot;/>&#xD;&#xA;&lt;filter element=&quot;RemoteSystemsConnections&quot; isEnabled=&quot;true&quot;/>&#xD;&#xA;&lt;filter element=&quot;RemoteSystemsTempFiles&quot; isEnabled=&quot;true&quot;/>&#xD;&#xA;&lt;filter element=&quot;.*&quot; isEnabled=&quot;false&quot;/>&#xD;&#xA;&lt;/filters>&#xD;&#xA;&lt;expanded>&#xD;&#xA;&lt;element path=&quot;/sendmail&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework/example&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework/example/sendmail&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/service&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/web&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/resources&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/resources/egovframework&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/resources/egovframework/sqlmap&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/resources/egovframework/sqlmap/example&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/resources/egovframework/sqlmap/example/mappers&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail/layout&quot;/>&#xD;&#xA;&lt;element path=&quot;/Servers&quot;/>&#xD;&#xA;&lt;element path=&quot;/Servers/Tomcat v9.0 Server at localhost-config&quot;/>&#xD;&#xA;&lt;/expanded>&#xD;&#xA;&lt;selection>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/resources/egovframework/sqlmap/example/mappers/Mail_SQL.xml&quot;/>&#xD;&#xA;&lt;/selection>&#xD;&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view LINK_NAVIGATOR_TO_EDITOR=&quot;1&quot; sorter=&quot;1&quot;>&#xD;&#xA;&lt;filters>&#xD;&#xA;&lt;filter element=&quot;*.class&quot; isEnabled=&quot;false&quot;/>&#xD;&#xA;&lt;filter element=&quot;RemoteSystemsConnections&quot; isEnabled=&quot;true&quot;/>&#xD;&#xA;&lt;filter element=&quot;RemoteSystemsTempFiles&quot; isEnabled=&quot;true&quot;/>&#xD;&#xA;&lt;filter element=&quot;.*&quot; isEnabled=&quot;false&quot;/>&#xD;&#xA;&lt;/filters>&#xD;&#xA;&lt;expanded>&#xD;&#xA;&lt;element path=&quot;/sendmail&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework/example&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework/example/sendmail&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/service&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/java/egovframework/example/sendmail/web&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example&quot;/>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/webapp/WEB-INF/jsp/egovframework/example/sendmail&quot;/>&#xD;&#xA;&lt;/expanded>&#xD;&#xA;&lt;selection>&#xD;&#xA;&lt;element path=&quot;/sendmail/src/main/resources&quot;/>&#xD;&#xA;&lt;/selection>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_ddx66N_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.views.ResourceNavigator">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -1297,7 +1235,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ddx76t_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_7AKtUOCGEeu6ZIV-4NokDA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_dd0Ztt_PEeu7D4RsdQZ8-A"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_1-QmgOEyEeuSZMSup3Kbwg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_dd0Ztt_PEeu7D4RsdQZ8-A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ddx799_PEeu7D4RsdQZ8-A" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1310,7 +1248,7 @@
         <tags>toolbarSeparator</tags>
         <children xsi:type="menu:ToolBarSeparator" xmi:id="_ddx7_t_PEeu7D4RsdQZ8-A" elementId="additions" toBeRendered="false"/>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_8qWXMOCGEeu6ZIV-4NokDA">
+      <children xsi:type="menu:ToolBar" xmi:id="_8qWXMOCGEeu6ZIV-4NokDA" visible="false">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ddx8J9_PEeu7D4RsdQZ8-A" visible="false">
@@ -1331,7 +1269,7 @@
       <children xsi:type="menu:ToolBar" xmi:id="_ddx8O9_PEeu7D4RsdQZ8-A" visible="false">
         <tags>Draggable</tags>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_ddx8PN_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.edit.text.actionSet.presentation">
+      <children xsi:type="menu:ToolBar" xmi:id="_ddx8PN_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.edit.text.actionSet.presentation" visible="false">
         <tags>Draggable</tags>
         <children xsi:type="menu:HandledToolItem" xmi:id="_ddx8Pd_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.genericeditor.togglehighlight" visible="false" iconURI="platform:/plugin/com.genuitec.eclipse.genericeditor/icons/full/etool16/mark_occurrences.png" selected="true" type="Check" command="_dd0bh9_PEeu7D4RsdQZ8-A">
           <persistedState key="IIdentifier" value="com.genuitec.eclipse.genericeditor/com.genuitec.eclipse.genericeditor.togglehighlight"/>
@@ -1366,7 +1304,10 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ddx8Yd_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_7AMig-CGEeu6ZIV-4NokDA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_dd0ZUd_PEeu7D4RsdQZ8-A"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_1-bloOEyEeuSZMSup3Kbwg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_dd0ZUd_PEeu7D4RsdQZ8-A"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_6SQLQOEyEeuSZMSup3Kbwg" elementId="org.eclipse.jst.jsp.core.jspsource.source" visible="false">
+        <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ddx8bd_PEeu7D4RsdQZ8-A" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1513,8 +1454,6 @@
     <bindings xmi:id="_ddyhsN_PEeu7D4RsdQZ8-A" keySequence="ALT+CTRL+ARROW_UP" command="_dd0aS9_PEeu7D4RsdQZ8-A"/>
     <bindings xmi:id="_ddyhsd_PEeu7D4RsdQZ8-A" keySequence="ALT+CTRL+ARROW_DOWN" command="_dd0X7d_PEeu7D4RsdQZ8-A"/>
     <bindings xmi:id="_ddyhst_PEeu7D4RsdQZ8-A" keySequence="CTRL+F10" command="_dd0Zu9_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyhs9_PEeu7D4RsdQZ8-A" keySequence="CTRL+F" command="_dd0bdd_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyhtN_PEeu7D4RsdQZ8-A" keySequence="ESC" command="_dd0biN_PEeu7D4RsdQZ8-A"/>
   </bindingTables>
   <bindingTables xmi:id="_ddyhtd_PEeu7D4RsdQZ8-A" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" bindingContext="_ddyj4N_PEeu7D4RsdQZ8-A">
     <bindings xmi:id="_ddyhtt_PEeu7D4RsdQZ8-A" keySequence="INSERT" command="_dd0Xq9_PEeu7D4RsdQZ8-A"/>
@@ -2046,31 +1985,9 @@
   <bindingTables xmi:id="_ddyjjd_PEeu7D4RsdQZ8-A" bindingContext="_ddykI9_PEeu7D4RsdQZ8-A"/>
   <bindingTables xmi:id="_ddyjjt_PEeu7D4RsdQZ8-A" bindingContext="_ddykJN_PEeu7D4RsdQZ8-A"/>
   <bindingTables xmi:id="_ddyjj9_PEeu7D4RsdQZ8-A" bindingContext="_ddykJd_PEeu7D4RsdQZ8-A"/>
-  <bindingTables xmi:id="_ddyjkN_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.genericeditor.genericEditorContext" bindingContext="_ddyj0t_PEeu7D4RsdQZ8-A">
-    <bindings xmi:id="_ddyjkd_PEeu7D4RsdQZ8-A" keySequence="F3" command="_dd0Zyd_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjkt_PEeu7D4RsdQZ8-A" keySequence="F4" command="_dd0bcN_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjk9_PEeu7D4RsdQZ8-A" keySequence="CTRL+SHIFT+/" command="_dd0bg9_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjlN_PEeu7D4RsdQZ8-A" keySequence="CTRL+O" command="_dd0bgt_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjld_PEeu7D4RsdQZ8-A" keySequence="CTRL+SHIFT+\" command="_dd0bbt_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjlt_PEeu7D4RsdQZ8-A" keySequence="CTRL+SHIFT+T" command="_dd0bid_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjl9_PEeu7D4RsdQZ8-A" keySequence="CTRL+SHIFT+C" command="_dd0bhN_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjmN_PEeu7D4RsdQZ8-A" keySequence="CTRL+SHIFT+F" command="_dd0bit_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjmd_PEeu7D4RsdQZ8-A" keySequence="CTRL+SHIFT+G" command="_dd0bkt_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjmt_PEeu7D4RsdQZ8-A" keySequence="ALT+CTRL+H" command="_dd0bhd_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjm9_PEeu7D4RsdQZ8-A" keySequence="CTRL+T" command="_dd0bj9_PEeu7D4RsdQZ8-A"/>
-  </bindingTables>
-  <bindingTables xmi:id="_ddyjnN_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.inlinesearch.context" bindingContext="_ddyj0d_PEeu7D4RsdQZ8-A">
-    <bindings xmi:id="_ddyjnd_PEeu7D4RsdQZ8-A" keySequence="CTRL+BS" command="_dd0bfN_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjnt_PEeu7D4RsdQZ8-A" keySequence="ALT+SHIFT+CR" command="_dd0bct_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjn9_PEeu7D4RsdQZ8-A" keySequence="ALT+SHIFT+1" command="_dd0bgd_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjoN_PEeu7D4RsdQZ8-A" keySequence="CTRL+DEL" command="_dd0bgN_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjod_PEeu7D4RsdQZ8-A" keySequence="CTRL+ARROW_UP" command="_dd0bjt_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjot_PEeu7D4RsdQZ8-A" keySequence="CTRL+ARROW_DOWN" command="_dd0bd9_PEeu7D4RsdQZ8-A"/>
-  </bindingTables>
-  <bindingTables xmi:id="_ddyjo9_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.meExplorerScope" bindingContext="_ddyj49_PEeu7D4RsdQZ8-A">
-    <bindings xmi:id="_ddyjpN_PEeu7D4RsdQZ8-A" keySequence="ALT+SHIFT+R" command="_ddzyMt_PEeu7D4RsdQZ8-A"/>
-    <bindings xmi:id="_ddyjpd_PEeu7D4RsdQZ8-A" keySequence="ALT+SHIFT+V" command="_ddzyCd_PEeu7D4RsdQZ8-A"/>
-  </bindingTables>
+  <bindingTables xmi:id="_ddyjkN_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.genericeditor.genericEditorContext" bindingContext="_ddyj0t_PEeu7D4RsdQZ8-A"/>
+  <bindingTables xmi:id="_ddyjnN_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.inlinesearch.context" bindingContext="_ddyj0d_PEeu7D4RsdQZ8-A"/>
+  <bindingTables xmi:id="_ddyjo9_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.meExplorerScope" bindingContext="_ddyj49_PEeu7D4RsdQZ8-A"/>
   <bindingTables xmi:id="_ddyjpt_PEeu7D4RsdQZ8-A" bindingContext="_ddykJt_PEeu7D4RsdQZ8-A"/>
   <rootContext xmi:id="_ddyjp9_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_ddyjqN_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="In Windows" description="A window is open">
@@ -2976,24 +2893,6 @@
     <persistedState key="originalCompatibilityViewBundle" value="net.java.amateras.umleditor.java"/>
     <tags>View</tags>
     <tags>categoryTag:AmaterasUML</tags>
-  </descriptors>
-  <descriptors xmi:id="_ddykqN_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.codetogether.ui.main" label="CodeTogether" iconURI="platform:/plugin/com.genuitec.eclipse.codetogether.ui/images/codetogether-16px.png" tooltip="" category="CodeTogether" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.genuitec.eclipse.codetogether.ui.views.MainView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.genuitec.eclipse.codetogether.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:CodeTogether</tags>
-  </descriptors>
-  <descriptors xmi:id="_ddykqd_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.codetogether.ui.client.view.TypeHierarchy" label="Type Hierarchy" iconURI="platform:/plugin/com.genuitec.eclipse.codetogether.ui/images/codetogether-16px.png" tooltip="" category="Other" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.genuitec.eclipse.lsp4e.operations.typeHierarchy.LSTypeHierarchyView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.genuitec.eclipse.codetogether.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:Other</tags>
-  </descriptors>
-  <descriptors xmi:id="_ddykqt_PEeu7D4RsdQZ8-A" elementId="com.genuitec.eclipse.codetogether.ui.client.view.CallHierarchy" label="Call Hierarchy" iconURI="platform:/plugin/com.genuitec.eclipse.codetogether.ui/images/codetogether-16px.png" tooltip="" category="Other" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.genuitec.eclipse.lsp4e.operations.callHierarchy.LSCallHierarchyView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.genuitec.eclipse.codetogether.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:Other</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -4526,7 +4425,7 @@
   <addons xmi:id="_dd0bnd_PEeu7D4RsdQZ8-A" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_dd0bnt_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_dd0bn9_PEeu7D4RsdQZ8-A" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_zWCAAOEyEeuSZMSup3Kbwg" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dd0bod_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_dd0bot_PEeu7D4RsdQZ8-A" elementId="org.eclipse.ui.category.edit" name="Edit"/>
   <categories xmi:id="_dd0bo9_PEeu7D4RsdQZ8-A" elementId="org.eclipse.mylyn.wikitext.ui.editor.category" name="WikiText Markup Editing Commands" description="commands for editing lightweight markup"/>
