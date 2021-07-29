@@ -46,7 +46,17 @@
         <a class="nav-link" href="<c:url value='/main.do'/>">
         <i class="fas fa-trash"></i>
           <span>휴지통</span></a>
+      </li>
+      
+       <!-- Divider -->
+      <hr class="sidebar-divider"> 
+      
+      <li class="nav-item active">
+        <a class="nav-link" href="<c:url value='/addresslist.do?userName=${userName }'/>">
+        <i class="far fa-address-book"></i>
+          <span>주소록</span></a>
       </li>      
+      
       <!-- Divider -->
       <hr class="sidebar-divider"> 
       

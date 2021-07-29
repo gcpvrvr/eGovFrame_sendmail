@@ -132,6 +132,57 @@
 				tb_mail A 
 			WHERE A.sender=#{userName}
 	</select>
+	
+	
+<!-- addressbook 이랑 mariadb 연결하기 -->
+<!-- 	<select id="selectAddress" resultMap="mail">
+
+			SELECT
+				A.idx
+				, A.workplace
+				, A.dept
+				, A.address_name
+				, A.email_address
+				, A.p_number
+				, A.memo
+				, IFNULL(A.count, 0) as count mariaDB IFNULL은  oracle의 NVL임~~
+				, A.indate
+				.......밑부터수정.........
+				, B.user_name as writerNm
+			FROM 
+				tb_mail A 
+			LEFT JOIN 
+				tb_user B
+			ON
+				A.writer = B.user_id 
+			WHERE A.idx=#{idx}
+
+	</select>
+	select는 나중에 테이블이 추가될 수 있기에 Alias를 쓰면 좋다.
+	resultMap이나 resultType이나 아무거나 쓰면 된다. -->
+
+	<select id="addresslist" parameterType="mailVO" resultType="egovMap">
+
+			SELECT
+				A.idx2
+				, A.workplace
+				, A.dept
+				, A.address_name
+				, A.email_address
+				, A.p_number
+				, A.memo
+				, A.indate2
+			FROM 
+				tb_addressbook A
+
+	</select>
+	
+	
+	
+	
+	
+	
+	
 
 	<select id="selectMailListTotCnt" parameterType="mailVO" resultType="int">
 
@@ -161,3 +212,7 @@
 	</select>
 
 </mapper>
+
+
+
+

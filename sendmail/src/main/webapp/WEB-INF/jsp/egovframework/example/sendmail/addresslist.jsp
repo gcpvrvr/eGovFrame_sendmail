@@ -1,9 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!-- 윗 부분 넣어줘야 한글 안깨짐 --> 
 <%@ include file ="../sendmail/layout/header.jsp" %>
 <!-- 헤더 넣음 -->
 
-<title>받은메일함</title>
+<title>주소록</title>
 <!-- Custom styles for this page -->
 <link href="<%=request.getContextPath()%>/css/bootstrap/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
@@ -24,7 +25,6 @@
           
 	          <!-- Topbar -->
 			      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-			
 			      </nav>
 			      <!-- End of Topbar -->
 
@@ -34,7 +34,15 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">받은 메일함</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">주소록  &nbsp;&nbsp;  <!-- 공백 띄어쓰기 -->
+	                        <thead>
+	                            <tr>
+		                        <!-- add Button-->
+								<th><button class="btn btn-primary btn-xl disabled" id="addButton"
+									type="submit" onclick="addBtn();">등록</button></th>
+								</tr>
+                         	 </thead>
+                         </h6>
                     </div>
                     <div class="card-body">
                       <div class="table-responsive">
@@ -42,20 +50,30 @@
                           <thead>
                             <tr>
                               <th>No</th>
-                              <th>제목</th>
-                              <th>보낸이</th>
-                              <th>일자</th>
-                              <th></th>                    
+                              <th>회사</th>
+                              <th>부서</th>
+                              <th>이름</th>
+                              <th>이메일</th>
+                              <th>전화번호</th>
+                              <th>메모</th>
+                              <th>날짜</th> 
+                              <th>편집</th>                           
+                           <!--    <th colspan="2" align="center">편집</th> 편집에 수정/삭제 들어가게... -->                     
                             </tr>
                           </thead>
-                          <tbody>
+                          <tbody>						<!-- VO 파라미터 -->
 														<c:forEach var="result" items="${resultList}" varStatus="status">
 															<tr>
-																<td><a href="javascript:view();"><c:out value="${result.idx}"/></a></td>
-																<td><a href="javascript:view();"><c:out value="${result.title}"/></a></td>
-																<td><c:out value="${result.sender}"/></td>
-																<td><c:out value="${result.indate}"/></td>
-																<td>삭제</td>
+																<td><c:out value="${result.idx2}"/></td>
+																<td><c:out value="${result.workplace}"/></td>
+																<td><c:out value="${result.dept}"/></td>
+																<td><c:out value="${result.addressName}"/></td>
+																<td><c:out value="${result.emailAddress}"/></td>
+																<td><c:out value="${result.pNumber}"/></td>
+																<td><c:out value="${result.memo}"/></td>
+																<td><c:out value="${result.indate2}"/></td>
+																<td><a href="javascript:view();">수정</a> &nbsp;/&nbsp;
+																	<a href="javascript:view();">삭제</a></td>	
 															</tr>
 														</c:forEach>   
                           </tbody>
@@ -82,6 +100,14 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
+
+	<!-- 주소록의 등록버튼 작동 함수 -->
+	<script>
+	function addBtn(){
+        location.href = "<c:url value='/addressbook.do'/>";
+        }
+	</script>
+	
 
     <!-- Bootstrap core JavaScript-->
     <script src="<%=request.getContextPath()%>/css/bootstrap/vendor/jquery/jquery.min.js"></script>

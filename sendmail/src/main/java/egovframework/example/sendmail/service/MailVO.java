@@ -45,8 +45,21 @@ public class MailVO extends SampleDefaultVO {
 	private String userId;
 	private String password;
 	private String userName;
+
+	
+//addressbook 이랑 mariadb 연결하기 (getter,setter)
+	private String idx2;
+	private String workplace;
+	private String dept;
+	private String addressName;
+	private String emailAddress;
+	private String pNumber;
+	private String memo;
+	private String indate2;
 	
 	
+	
+
 	public String getUserName() {
 		return userName;
 	}
@@ -100,6 +113,57 @@ public class MailVO extends SampleDefaultVO {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	
+//addressbook 이랑 mariadb 연결하기 (getter,setter)
+	public String getIdx2() {
+		return idx2;
+	}
+	public void setIdx2(String idx2) {
+		this.idx2 = idx2;
+	}
+	public String getWorkplace() {
+		return workplace;
+	}
+	public void setWorkplace(String workplace) {
+		this.workplace = workplace;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public String getAddressName() {
+		return addressName;
+	}
+	public void setAddressName(String addressName) {
+		this.addressName = addressName;
+	}
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+	public String getpNumber() {
+		return pNumber;
+	}
+	public void setpNumber(String pNumber) {
+		this.pNumber = pNumber;
+	}
+	public String getMemo() {
+		return memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
+	public String getIndate2() {
+		return indate2;
+	}
+	public void setIndate2(String indate2) {
+		this.indate2 = indate2;
 	}
 
 

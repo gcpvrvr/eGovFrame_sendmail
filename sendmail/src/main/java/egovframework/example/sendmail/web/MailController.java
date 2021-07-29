@@ -25,6 +25,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import egovframework.example.sendmail.service.MailService;
@@ -81,7 +82,9 @@ public class MailController {
 			request.getSession().setAttribute("userId", user_id);
 			request.getSession().setAttribute("userName", user_name);  // Mail_SQL에서 name 가져오게끔 설정.
 			user_name = URLEncoder.encode(user_name, "UTF-8");	// ★ 한글을 파라미터로 보낼시 ??? 인코딩 애러처리
-			return "redirect:/inbox.do?userName=" + user_name;  // 로그인한 사용자의 수신함을 출력하기 위해서 파라미터 사용.
+			
+			return "sendmail/main";
+//			return "redirect:/inbox.do?userName=" + user_name;  // 로그인한 사용자의 수신함을 출력하기 위해서 파라미터 사용.
 			// 이때 MailVO에서 userName을 변수로 선언하고 getter와 setter를 만들어줘야 정상작동한다. 파라미터로 가는데도 VO가 필요한듯?
 		} else {
 			request.getSession().setAttribute("userId", "");
@@ -128,6 +131,66 @@ public class MailController {
 		return "sendmail/outbox";        
 	}
 	
+	
+	
+// addressbook 이랑 mariadb 연결하기		
+	@RequestMapping(value = "/addresslist.do")
+	public String addresslist(@ModelAttribute("mailVO") MailVO mailVO,
+							ModelMap model) throws Exception {
+		
+		List<?> list = mailService.addresslist(mailVO);     
+//		System.out.println("값들 : " + list);  
+		model.addAttribute("resultList", list);
+		return "sendmail/addresslist";       
+	}
+	
+// addressbook 등록버튼
+	@RequestMapping(value = "/addressbook.do")
+	public String addressbook(ModelMap model) throws Exception {
+		return "sendmail/addressbook"; 
+	}
+	
+	
+	
+
+	
+//	//주소록db에다가 주소 넣는거(??)
+//	@RequestMapping(value = "/addressbook.do")
+//	public String addressbook(
+//							  HttpServletRequest request, HttpServletResponse response,
+//							  @RequestParam("receiverAddress") String receiverAddress,
+//				              @RequestParam("title") String title, 
+//				          	  @RequestParam("contents") String contents, 
+//							  ModelMap model) throws Exception {
+//		String userId = request.getSession().getAttribute("userId").toString();
+//		String senderAddress = userId + "@gmail.com";
+//		String userName = request.getSession().getAttribute("userName").toString();
+//		
+//		MailVO mailVO = new MailVO();
+//		mailVO.setTitle(title);
+//		mailVO.setContents(contents);
+//		mailVO.setSender(userName);
+//		mailVO.setReceiver(receiverAddress);
+//		connectSMTP();
+//		createMail(senderAddress, receiverAddress, title, contents);
+//		
+//		response.setContentType("text/html; charset=UTF-8");
+//		PrintWriter out = response.getWriter();
+//		if (sendMail()) {
+//		mailService.insertMail(mailVO);
+//		out.println("<script>alert('메일 발송 성공!'); </script>");
+//		out.flush();
+//		return "sendmail/outbox";
+//		} else {
+//		out.println("<script>alert('메일 발송 실패..'); </script>");
+//		out.flush();
+//		return "sendmail/outbox";
+//		}
+//		
+//	}           -> 주소록에 주소 입력하는 걸로 내용 고치기!
+	
+	
+		
 	@RequestMapping(value = "/writePage.do")
 	public String writePage(@ModelAttribute("mailVO") MailVO mailVO, 
 							ModelMap model) throws Exception {
@@ -143,7 +206,7 @@ public class MailController {
 			          	@RequestParam("contents") String contents, 
 						ModelMap model) throws Exception {
 		String userId = request.getSession().getAttribute("userId").toString();
-		String senderAddress = userId + "@gmail.com";
+		String senderAddress = userId + "@durianict.co.kr";
 		String userName = request.getSession().getAttribute("userName").toString();
 		
 		MailVO mailVO = new MailVO();
@@ -235,10 +298,23 @@ public class MailController {
 	     return false;
 	    }
 	}
-	   
+	  
 	
-	   
 
+	
 	
 	 
 }
+
+
+
+
+
+	
+
+
+
+
+
+
+
