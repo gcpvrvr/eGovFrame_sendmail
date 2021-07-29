@@ -131,65 +131,6 @@ public class MailController {
 		return "sendmail/outbox";        
 	}
 	
-	
-	
-// addressbook 이랑 mariadb 연결하기		
-	@RequestMapping(value = "/addresslist.do")
-	public String addresslist(@ModelAttribute("mailVO") MailVO mailVO,
-							ModelMap model) throws Exception {
-		
-		List<?> list = mailService.addresslist(mailVO);     
-//		System.out.println("값들 : " + list);  
-		model.addAttribute("resultList", list);
-		return "sendmail/addresslist";       
-	}
-	
-// addressbook 등록버튼
-	@RequestMapping(value = "/addressbook.do")
-	public String addressbook(ModelMap model) throws Exception {
-		return "sendmail/addressbook"; 
-	}
-	
-	
-	
-
-	
-//	//주소록db에다가 주소 넣는거(??)
-//	@RequestMapping(value = "/addressbook.do")
-//	public String addressbook(
-//							  HttpServletRequest request, HttpServletResponse response,
-//							  @RequestParam("receiverAddress") String receiverAddress,
-//				              @RequestParam("title") String title, 
-//				          	  @RequestParam("contents") String contents, 
-//							  ModelMap model) throws Exception {
-//		String userId = request.getSession().getAttribute("userId").toString();
-//		String senderAddress = userId + "@gmail.com";
-//		String userName = request.getSession().getAttribute("userName").toString();
-//		
-//		MailVO mailVO = new MailVO();
-//		mailVO.setTitle(title);
-//		mailVO.setContents(contents);
-//		mailVO.setSender(userName);
-//		mailVO.setReceiver(receiverAddress);
-//		connectSMTP();
-//		createMail(senderAddress, receiverAddress, title, contents);
-//		
-//		response.setContentType("text/html; charset=UTF-8");
-//		PrintWriter out = response.getWriter();
-//		if (sendMail()) {
-//		mailService.insertMail(mailVO);
-//		out.println("<script>alert('메일 발송 성공!'); </script>");
-//		out.flush();
-//		return "sendmail/outbox";
-//		} else {
-//		out.println("<script>alert('메일 발송 실패..'); </script>");
-//		out.flush();
-//		return "sendmail/outbox";
-//		}
-//		
-//	}           -> 주소록에 주소 입력하는 걸로 내용 고치기!
-	
-	
 		
 	@RequestMapping(value = "/writePage.do")
 	public String writePage(@ModelAttribute("mailVO") MailVO mailVO, 
@@ -299,6 +240,28 @@ public class MailController {
 	    }
 	}
 	  
+
+	
+	
+// addressbook 이랑 mariadb 연결하기		
+	@RequestMapping(value = "/addresslist.do")
+	public String addresslist(@ModelAttribute("mailVO") MailVO mailVO,
+							ModelMap model) throws Exception {
+		
+		List<?> list = mailService.addresslist(mailVO);     
+//			System.out.println("값들 : " + list);  
+		model.addAttribute("resultList", list);
+		return "sendmail/addresslist";       
+	}
+	
+// addressbook 등록버튼
+	@RequestMapping(value = "/addressbook.do")
+	public String addressbook(ModelMap model) throws Exception {
+		return "sendmail/addressbook"; 
+	}
+	
+	
+	
 	
 
 	

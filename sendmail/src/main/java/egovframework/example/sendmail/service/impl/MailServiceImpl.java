@@ -140,38 +140,6 @@ public class MailServiceImpl extends EgovAbstractServiceImpl implements MailServ
 		return mailDAO.selectOutboxList(vo);
 	}
 	
-	
-	
-//addressbook 이랑 mariadb 연결하기	
-//	/**
-//	 * 글을 조회한다.
-//	 * @param vo - 조회할 정보가 담긴 MailVO
-//	 * @return 조회한 글
-//	 * @exception Exception
-//	 */
-//	@Override
-//	public MailVO selectAddress(MailVO vo) throws Exception {
-//		MailVO addressResultVO = mailDAO.selectAddress(vo);
-//		if (addressResultVO == null)
-//			throw processException("info.nodata.msg");
-//		return addressResultVO;
-//	}
-	/**
-	 * 글 목록을 조회한다.
-	 * @param searchVO - 조회할 정보가 담긴 VO
-	 * @return 글 목록
-	 * @exception Exception
-	 */
-	
-	// DAO를 부른다.
-	@Override
-	public List<?> addresslist(MailVO vo) throws Exception {
-		return mailDAO.addresslist(vo);
-	}
-	
-		
-	
-	
 
 	/**
 	 * 글 총 갯수를 조회한다.
@@ -187,6 +155,23 @@ public class MailServiceImpl extends EgovAbstractServiceImpl implements MailServ
 	@Override
 	public String selectLoginCheck(MailVO vo) {
 		return mailDAO.selectLoginCheck(vo);
+	}
+	
+	
+	
+	
+//addressbook 이랑 mariadb 연결하기	
+	/**
+	 * 글 목록을 조회한다.
+	 * @param searchVO - 조회할 정보가 담긴 VO
+	 * @return 글 목록
+	 * @exception Exception
+	 */
+	
+	// DAO를 부른다.
+	@Override
+	public List<?> addresslist(MailVO vo) throws Exception {
+		return mailDAO.addresslist(vo);
 	}
 	
 	
