@@ -17,6 +17,7 @@ package egovframework.example.sendmail.service.impl;
 
 import java.util.List;
 
+import egovframework.example.sendmail.service.AddressVO;
 import egovframework.example.sendmail.service.MailVO;
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
 
@@ -45,6 +46,11 @@ public interface MailMapper {
 	 * @exception Exception
 	 */
 	void insertMail(MailVO vo) throws Exception;
+	
+	/*wholebox 상세 */
+	
+	MailVO detailwholebox(MailVO vo) throws Exception;
+	
 
 	/**
 	 * 글을 수정한다.
@@ -92,16 +98,109 @@ public interface MailMapper {
 	String selectLoginCheck(MailVO vo);
 	
 	
-//addressbook 이랑 mariadb 연결하기
+	
+
+	/**
+	 * 메일함을 입력한다.
+	 * @param vo - 등록할 정보가 담긴 MailVO
+	 * @return 등록 결과
+	 * @exception Exception
+	 */
+	void insertMailbox(MailVO vo) throws Exception;
+
+	
+	/**
+	 * 메일함추가하는 목록을 조회한다.
+	 * @param searchVO - 조회할 정보가 담긴 VO
+	 * @return 글 목록
+	 * @exception Exception
+	 */
+	List<?> mboxaddlist(MailVO vo) throws Exception;
+	
+	
+	/*메일함 상세 보기(수정페이지) */
+	
+	MailVO detailmailbox(MailVO vo) throws Exception;
+	
+	/**
+	 * 메일함을 수정한다.
+	 * @param vo - 수정할 정보가 담긴 MailVO
+	 * @return void형
+	 * @exception Exception
+	 */
+	void updateMailbox(MailVO vo) throws Exception;
+
+	/**
+	 * 메일함을 삭제한다.
+	 * @param vo - 삭제할 정보가 담긴 MailVO
+	 * @return void형
+	 * @exception Exception
+	 */
+	void deleteMailbox(MailVO vo) throws Exception;
+	
+	
+/*	*//**
+	 * mailbox메일함 셀렉트박스 조회
+	 * @param searchVO - 조회할 정보가 담긴 VO
+	 * @return 글 목록
+	 * @exception Exception
+	 */
+	List<?> selectMboxAdd(MailVO vo) throws Exception;
+	
+	
+
+	/**
+	 * 메일 검색조회 페이지
+	 * @param searchVO - 조회할 정보가 담긴 VO
+	 * @return 글 목록
+	 * @exception Exception
+	 */
+	List<?> searchmail(MailVO vo) throws Exception;
+	
+
+	
+	/*주소록*/
+	
 	/**
 	 * 글 목록을 조회한다.
 	 * @param searchVO - 조회할 정보가 담긴 VO
 	 * @return 글 목록
 	 * @exception Exception
 	 */
-	List<?> addresslist(MailVO vo) throws Exception;
+	List<?> addresslist(AddressVO vo) throws Exception;
 	
 	
+	/**
+	 * 글을 입력한다.
+	 * @param vo - 등록할 정보가 담긴 MailVO
+	 * @return 등록 결과
+	 * @exception Exception
+	 */
+	void insertAddress(AddressVO vo) throws Exception;
+
+	
+	/*주소록 상세 보기(수정페이지) */
+	
+	AddressVO detailAddress(AddressVO vo) throws Exception;
+	
+	/**
+	 * 글을 수정한다.
+	 * @param vo - 수정할 정보가 담긴 MailVO
+	 * @return void형
+	 * @exception Exception
+	 */
+	void updateAddress(AddressVO vo) throws Exception;
+
+	/**
+	 * 글을 삭제한다.
+	 * @param vo - 삭제할 정보가 담긴 MailVO
+	 * @return void형
+	 * @exception Exception
+	 */
+	void deleteAddress(AddressVO vo) throws Exception;
+	
+	
+
 
 }
 

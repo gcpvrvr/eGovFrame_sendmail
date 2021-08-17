@@ -25,9 +25,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import egovframework.example.sendmail.service.AddressVO;
 import egovframework.example.sendmail.service.MailService;
 import egovframework.example.sendmail.service.MailVO;
 import egovframework.rte.fdl.property.EgovPropertyService;
@@ -111,24 +111,40 @@ public class MailController {
 		return "sendmail/wholebox";        
 	}
 	
+	
+	// inbox받은메일함 + mailbox메일함의 셀렉트박스 (boxName 보이도록)
 	@RequestMapping(value = "/inbox.do")
 	public String inbox(@ModelAttribute("mailVO") MailVO mailVO, 
-							@RequestParam("userName") String userName,
-							ModelMap model) throws Exception {
-//		userName = URLDecoder.decode(userName, "UTF-8");
-//		System.out.println("inbox.do에서 userName:" + userName);
-		System.out.println("aaaaa");
+						HttpServletRequest request, ModelMap model) throws Exception {
+		
+		String userId = request.getSession().getAttribute("userId").toString();   //mailbox메일함의 셀렉트박스
+		mailVO.setUserId(userId);										
+		List<?> list2 = mailService.selectMboxAdd(mailVO);				
+		model.addAttribute("resultList2", list2);						
+
 		List<?> list = mailService.selectInboxList(mailVO);
-		model.addAttribute("resultList", list);
+		model.addAttribute("resultList", list); 
 		return "sendmail/inbox";        
 	}
 	
 	@RequestMapping(value = "/outbox.do")
-	public String outbox(@ModelAttribute("mailVO") MailVO mailVO, 
+	public String outbox(@ModelAttribute("mailVO") MailVO mailVO,
 							ModelMap model) throws Exception {
 		List<?> list = mailService.selectOutboxList(mailVO);
 		model.addAttribute("resultList", list);
 		return "sendmail/outbox";        
+	}
+	
+	
+//	wholebox 상세 페이지
+	@RequestMapping(value = "/detailwholebox.do")
+	public String detailwholebox(@ModelAttribute("mailVO") MailVO mailVO, 
+								HttpServletRequest request, 
+								ModelMap model) throws Exception {
+		mailVO = mailService.detailwholebox(mailVO); 
+		model.addAttribute("mailVO", mailVO);   
+		System.out.println("전체메일함 상세");
+		return "sendmail/detailwholebox";
 	}
 	
 		
@@ -163,11 +179,11 @@ public class MailController {
 	    if (sendMail()) {
 	    	mailService.insertMail(mailVO);
 			out.println("<script>alert('메일 발송 성공!'); </script>");
-			out.flush();
+			out.flush();		
 			return "sendmail/outbox";
 	    } else {
 	    	out.println("<script>alert('메일 발송 실패..'); </script>");
-			out.flush();
+			out.flush();		
 	    	return "sendmail/outbox";
 	    }
 	    
@@ -239,32 +255,199 @@ public class MailController {
 	     return false;
 	    }
 	}
-	  
+	
+	
+	
+		
+//	메일함 입력 
+	@RequestMapping(value = "/insertMailbox.do")
+	public String insertMailbox(@ModelAttribute("mailVO") MailVO mailVO, 			
+								HttpServletRequest request) throws Exception {
+		
+		String userName = request.getSession().getAttribute("userName").toString();	
+		String userId = request.getSession().getAttribute("userId").toString();
+		mailVO.setUserName(userName);
+		mailVO.setUserId(userId);
+		System.out.println("userName : " + userName);
+		System.out.println("userId : " + userId);
+		userName = URLEncoder.encode(userName, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.
+		userId = URLEncoder.encode(userId, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.
+		
+		mailService.insertMailbox(mailVO);
+		System.out.println("메일함 입력");
+		return "redirect:/mboxaddlist.do?userName=" + userName;
+	}
 
 	
 	
-// addressbook 이랑 mariadb 연결하기		
-	@RequestMapping(value = "/addresslist.do")
-	public String addresslist(@ModelAttribute("mailVO") MailVO mailVO,
-							ModelMap model) throws Exception {
+//		메일함추가하는 목록 조회 페이지	
+	@RequestMapping(value = "/mboxaddlist.do")
+	public String mboxaddlist(@ModelAttribute("mailVO") MailVO mailVO,
+						HttpServletRequest request, ModelMap model) throws Exception {
 		
-		List<?> list = mailService.addresslist(mailVO);     
-//			System.out.println("값들 : " + list);  
-		model.addAttribute("resultList", list);
-		return "sendmail/addresslist";       
+
+		String userId = request.getSession().getAttribute("userId").toString();
+		mailVO.setUserId(userId);
+		userId = URLEncoder.encode(userId, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.
+		
+		List<?> list = mailService.mboxaddlist(mailVO);
+		System.out.println("값들 : " + list);  
+		model.addAttribute("resultList", list);   // list를 addresslist.jsp로 보낼때 "resultList"에 담아 model.addAttribute를 씀
+		return "sendmail/mboxaddlist";       	  // 즉, 컨트롤러에서 작업한 내용을 jsp파일로 전달할때 ModelMap을 쓴다.	
 	}
 	
-// addressbook 등록버튼
+	
+	//	메일함 상세 (수정페이지)
+	@RequestMapping(value = "/detailmailbox.do")
+	public String detailmailbox(@ModelAttribute("mailVO") MailVO mailVO, 
+								HttpServletRequest request, 
+								ModelMap model) throws Exception {
+		mailVO = mailService.detailmailbox(mailVO); 
+		model.addAttribute("mailVO", mailVO);   
+		System.out.println("메일함 수정페이지");
+		return "sendmail/detailmailbox";
+	}
+	
+	
+	
+	//	메일함 수정 
+	@RequestMapping(value = "/updateMailbox.do")
+	public String updateMailbox(@ModelAttribute("mailVO") MailVO mailVO,
+								HttpServletRequest request) throws Exception { 
+		
+		String userName = request.getSession().getAttribute("userName").toString();		
+		mailVO.setUserName(userName);
+		System.out.println("userName : " + userName);
+		userName = URLEncoder.encode(userName, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.
+		
+		mailService.updateMailbox(mailVO);
+		System.out.println("메일함 수정");
+		return "redirect:/mboxaddlist.do?userName=" + userName;
+			
+	}
+	
+	
+	//	메일함 삭제	
+	@RequestMapping(value = "/deleteMailbox.do")   
+	public String deleteMailbox(@ModelAttribute("mailVO") MailVO mailVO,
+								HttpServletRequest request) throws Exception {
+		
+		String userName = request.getSession().getAttribute("userName").toString();		
+		mailVO.setUserName(userName);
+		System.out.println("userName : " + userName);
+		userName = URLEncoder.encode(userName, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.
+		
+		mailService.deleteMailbox(mailVO);
+		System.out.println("메일함 삭제");
+		return "redirect:/mboxaddlist.do?userName=" + userName;
+
+	}	
+	
+	//	메일 검색조회 페이지
+	@RequestMapping(value = "/searchmail.do")
+	public String searchmail(@ModelAttribute("mailVO") MailVO mailVO,
+						HttpServletRequest request, ModelMap model) throws Exception {
+		
+		String userId = request.getSession().getAttribute("userId").toString();
+		mailVO.setUserId(userId);
+//		userId = URLEncoder.encode(userId, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.				
+		List<?> list2 = mailService.selectMboxAdd(mailVO);
+//		System.out.println("값들 : " + list);  
+		model.addAttribute("resultList2", list2);  
+	
+		List<?> list = mailService.searchmail(mailVO);
+//		System.out.println("값들 : " + list);  
+		model.addAttribute("resultList", list);   // list를 addresslist.jsp로 보낼때 "resultList"에 담아 model.addAttribute를 씀
+		return "sendmail/searchmail";       	  // 즉, 컨트롤러에서 작업한 내용을 jsp파일로 전달할때 ModelMap을 쓴다.	
+	}
+	 	
+	
+	
+	//주소록
+// 		주소록 목록 페이지	
+	@RequestMapping(value = "/addresslist.do")
+	public String addresslist(@ModelAttribute("addressVO") AddressVO addressVO,
+							ModelMap model) throws Exception {
+		
+		List<?> list = mailService.addresslist(addressVO);     
+//			System.out.println("값들 : " + list);  
+		model.addAttribute("resultList", list);   // list를 addresslist.jsp로 보낼때 "resultList"에 담아 model.addAttribute를 씀
+		return "sendmail/addresslist";       	  // 즉, 컨트롤러에서 작업한 내용을 jsp파일로 전달할때 ModelMap을 쓴다.	
+	}
+	
+// 		주소록 등록 페이지
 	@RequestMapping(value = "/addressbook.do")
 	public String addressbook(ModelMap model) throws Exception {
 		return "sendmail/addressbook"; 
 	}
+			
 	
+// 		주소록 입력 
+	@RequestMapping(value = "/insertAddress.do")
+	public String insertAddress(@ModelAttribute("addressVO") AddressVO addressVO, 			
+								HttpServletRequest request) throws Exception {
+		
+		String userName = request.getSession().getAttribute("userName").toString();		
+		addressVO.setUserName(userName);
+		System.out.println("userName : " + userName);
+		userName = URLEncoder.encode(userName, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.
+		
+		mailService.insertAddress(addressVO);
+		System.out.println("주소록입력");
+		return "redirect:/addresslist.do?userName=" + userName;
+	}
+
+	
+	
+//		주소록 상세 (수정페이지)
+	@RequestMapping(value = "/detailaddress.do")
+	public String detailAddress(@ModelAttribute("addressVO") AddressVO addressVO, 
+								HttpServletRequest request, 
+								ModelMap model) throws Exception {
+		addressVO = mailService.detailAddress(addressVO); 
+		model.addAttribute("addressVO", addressVO);   
+		System.out.println("주소록 수정페이지");
+		return "sendmail/detailaddress";
+	}
+		
+	
+//		주소록 수정 
+	@RequestMapping(value = "/updateAddress.do")
+	public String updateAddress(@ModelAttribute("addressVO") AddressVO addressVO,
+								HttpServletRequest request) throws Exception { 
+		
+		String userName = request.getSession().getAttribute("userName").toString();		
+		addressVO.setUserName(userName);
+		System.out.println("userName : " + userName);
+		userName = URLEncoder.encode(userName, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.
+		
+		mailService.updateAddress(addressVO);
+		System.out.println("주소록수정");
+		return "redirect:/addresslist.do?userName=" + userName;
+			
+	}
+	
+	
+//		주소록 삭제	
+	@RequestMapping(value = "/deleteAddress.do")   
+	public String deleteAddress(@ModelAttribute("addressVO") AddressVO addressVO,
+								HttpServletRequest request) throws Exception {
+		
+		String userName = request.getSession().getAttribute("userName").toString();		
+		addressVO.setUserName(userName);
+		System.out.println("userName : " + userName);
+		userName = URLEncoder.encode(userName, "UTF-8");  //이거 필수! 없으면 값 ???로 옴.
+		
+		mailService.deleteAddress(addressVO);
+		System.out.println("주소록삭제");
+		return "redirect:/addresslist.do?userName=" + userName;
+		
+
+	}	
 	
 	
 	
 
-	
 	
 	 
 }

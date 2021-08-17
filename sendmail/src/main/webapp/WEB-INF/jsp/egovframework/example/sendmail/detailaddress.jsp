@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>     
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!-- 윗 부분 넣어줘야 한글 안깨짐 --> 
 
@@ -13,7 +13,7 @@
   <div id="wrapper">
   
   	<%@ include file ="../sendmail/layout/sidebar.jsp" %>
-  
+  	
   
    <!-- Content Wrapper -->
    <div id="content-wrapper" class="d-flex flex-column">
@@ -50,13 +50,14 @@
 					<!-- To make this form functional, sign up at-->
 					<!-- https://startbootstrap.com/solution/contact-forms-->
 					<!-- to get an API token!-->
-					
 					<form id="addressForm" name="addressForm" method="post" data-sb-form-api-token="API_TOKEN">
+					<!-- <form id="contactForm" data-sb-form-api-token="API_TOKEN"> -->
+					
 						<!-- workplace input-->
 						<div class="form-floating mb-3">
 						<label for="workplace">회사</label>
 							<input class="form-control" id="workplace" name="workplace" type="text"
-								placeholder="회사명" data-sb-validations="required" />
+								 value="${addressVO.workplace }" data-sb-validations="required" />  
 							<div class="invalid-feedback" data-sb-feedback="workplace:required">
 								회사를 입력해주세요</div>
 						</div>
@@ -64,7 +65,7 @@
 						<div class="form-floating mb-3">
 						<label for="dept">부서</label>
 							<input class="form-control" id="dept" name="dept" type="text"
-								placeholder="부서명" data-sb-validations="required" />
+								 value="${addressVO.dept }" data-sb-validations="required" />
 							<div class="invalid-feedback" data-sb-feedback="dept:required">
 								부서를 입력해주세요</div>
 						</div>
@@ -72,7 +73,7 @@
 						<div class="form-floating mb-3">
 						<label for="addressName">이름</label>
 							<input class="form-control" id="addressName" name="addressName" type="text"
-								placeholder="이름" data-sb-validations="required" />
+								value="${addressVO.addressName }" data-sb-validations="required" />
 							<div class="invalid-feedback" data-sb-feedback="addressName:required">
 								이름을 입력해주세요</div>
 						</div>
@@ -80,7 +81,7 @@
 						<div class="form-floating mb-3">
 						<label for="emailAddress">이메일</label>	
 							<input class="form-control" id="emailAddress" name="emailAddress" type="email"
-								placeholder="이메일"
+								value="${addressVO.emailAddress }"
 								data-sb-validations="required,email" /> 	
 							<div class="invalid-feedback" data-sb-feedback="emailAddress:required">
 								이메일 주소를 입력해주세요</div>
@@ -91,7 +92,7 @@
 						<div class="form-floating mb-3">
 						<label for="pNumber">전화번호</label>	
 							<input class="form-control" id="pNumber" name="pNumber" type="tel"
-								placeholder="전화번호" data-sb-validations="required" />
+								value="${addressVO.pNumber }" data-sb-validations="required" />
 							<div class="invalid-feedback" data-sb-feedback="pNumber:required">
 								전화번호를 입력해주세요</div>
 						</div>
@@ -99,20 +100,11 @@
 						<div class="form-floating mb-3">
 						<label for="memo">메모</label>
 							<textarea class="form-control" id="memo" name="memo"  type="text"
-								placeholder="메모(최대 2,000자)" style="height: 10rem"
-								data-sb-validations="required"></textarea>
+								style="height: 10rem"
+								data-sb-validations="required">${addressVO.memo }</textarea>
 							<div class="invalid-feedback" data-sb-feedback="memo:required">
 								메모를 입력해주세요</div>
 						</div>
-						<!-- user-name2 input -->
-						<div class="form-floating mb-3">
-						<label for="userName2"></label>                                 
-							<input class="form-control" id="userName2" name="userName2" type="hidden"  
-								value="${userName }" placeholder="" data-sb-validations="required" />
-							<div class="invalid-feedback" data-sb-feedback="userName2:required">
-								</div>
-						</div>
-						
 						<!-- Submit success message-->
 						<!---->
 						<!-- This is what your users will see when the form-->
@@ -134,11 +126,12 @@
 						
 						<!-- insert Button-->
 						<button class="btn btn-primary btn-xl disabled" id="submitButton"
-							type="submit"  onclick="addBtn();">입력</button> &nbsp;
+							type="submit"  onclick="modify();">수정</button> &nbsp;
 							
 						<!-- return Button-->
 						<button class="btn btn-primary btn-xl disabled" id="returnButton"
 							type="button" onclick="cancel();">취소</button>
+					
 					</form>
 				</div>
 			</div>
@@ -154,13 +147,12 @@
 	<%@ include file ="../sendmail/layout/footer.jsp" %>
 
 
-	<!-- 주소록의 입력,취소(돌아가기)버튼 작동 함수 -->
+	<!-- 주소록의 수정,취소 작동 함수 -->
 	<script>
 
-	function addBtn(){
-
+	function modify(){
 		
-		 if( $("#workplace").val()==''){        
+		 if( $("#workplace").val()==''){
 			alert("회사를 입력하세요");
 			$("#workplace").focus();
 			return;
@@ -175,14 +167,13 @@
 			$("#emailAddress"). focus();
 			return;
 			}
-			if (!confirm("입력하시겠습니까?")){
+			if (!confirm("수정하시겠습니까?")){
 			return;
 			}
 		
-			document.addressForm.action = "<c:url value='/insertAddress.do'/>?idx=${addressVO.idx}"; 
+			document.addressForm.action = "<c:url value='/updateAddress.do'/>?idx=${addressVO.idx}";
 			document.addressForm.submit(); 
 			
-
         }
 	
 	function cancel(){

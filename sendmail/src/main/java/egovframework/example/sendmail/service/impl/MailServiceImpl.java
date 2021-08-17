@@ -23,6 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import egovframework.example.sendmail.service.AddressVO;
 import egovframework.example.sendmail.service.MailService;
 import egovframework.example.sendmail.service.MailVO;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
@@ -80,6 +81,18 @@ public class MailServiceImpl extends EgovAbstractServiceImpl implements MailServ
 		mailDAO.insertMail(vo);
 		return vo.getIdx();
 	}
+	
+	
+	/*wholebox 상세  */
+	
+	@Override
+	public MailVO detailwholebox(MailVO vo) throws Exception {
+		MailVO resultVO = mailDAO.detailwholebox(vo);     
+		if (resultVO == null)                                  
+			throw processException("info.nodata.msg");         
+		return resultVO;                                       
+	}
+	
 
 	/**
 	 * 글을 수정한다.
@@ -159,8 +172,102 @@ public class MailServiceImpl extends EgovAbstractServiceImpl implements MailServ
 	
 	
 	
+	/**
+	 * 메일함을 입력한다.
+	 * @param vo - 등록할 정보가 담긴 MailVO
+	 * @return 등록 결과
+	 * @exception Exception
+	 */
+	@Override
+	public String insertMailbox(MailVO vo) throws Exception {
+		LOGGER.debug(vo.toString());
+
+		/** ID Generation Service */
+//		String id = egovIdGnrService.getNextStringId();
+//		vo.setId(id);
+//		LOGGER.debug(vo.toString());
+
+		mailDAO.insertMailbox(vo);
+		return vo.getIdx();
+	}
+
 	
-//addressbook 이랑 mariadb 연결하기	
+	/**
+	 * 메일함추가하는 목록을 조회한다.
+	 * @param searchVO - 조회할 정보가 담긴 VO
+	 * @return 글 목록
+	 * @exception Exception
+	 */
+	
+	@Override
+	public List<?> mboxaddlist(MailVO vo) throws Exception {      
+		return mailDAO.mboxaddlist(vo);
+	}
+	
+	/*메일함 상세 보기(수정페이지) */
+	
+	@Override
+	public MailVO detailmailbox(MailVO vo) throws Exception {
+		MailVO resultVO = mailDAO.detailmailbox(vo);     
+		if (resultVO == null)                                  
+			throw processException("info.nodata.msg");         
+		return resultVO;                                       
+	}
+	
+	
+	/**
+	 * 메일함을 수정한다.
+	 * @param vo - 수정할 정보가 담긴 MailVO
+	 * @return void형
+	 * @exception Exception
+	 */
+	@Override
+	public void updateMailbox(MailVO vo) throws Exception {
+		mailDAO.updateMailbox(vo);
+	}
+
+	/**
+	 * 메일함을 삭제한다.
+	 * @param vo - 삭제할 정보가 담긴 MailVO
+	 * @return void형
+	 * @exception Exception
+	 */
+	@Override
+	public void deleteMailbox(MailVO vo) throws Exception {
+		mailDAO.deleteMailbox(vo);   
+	}
+	
+	
+/*	*//**
+	 * mailbox메일함 셀렉트박스 조회
+	 * @param searchVO - 조회할 정보가 담긴 VO
+	 * @return 글 목록
+	 * @exception Exception
+	 */
+	
+	@Override
+	public List<?> selectMboxAdd(MailVO vo) throws Exception {      
+		return mailDAO.selectMboxAdd(vo); 
+	}
+
+	
+/*	*//**
+	 * 메일 검색조회 페이지
+	 * @param searchVO - 조회할 정보가 담긴 VO
+	 * @return 글 목록
+	 * @exception Exception
+	 */
+	
+	@Override
+	public List<?> searchmail(MailVO vo) throws Exception {      
+		return mailDAO.searchmail(vo); 
+	}
+	
+	
+	
+	
+	
+	/*주소록*/
 	/**
 	 * 글 목록을 조회한다.
 	 * @param searchVO - 조회할 정보가 담긴 VO
@@ -168,13 +275,65 @@ public class MailServiceImpl extends EgovAbstractServiceImpl implements MailServ
 	 * @exception Exception
 	 */
 	
-	// DAO를 부른다.
 	@Override
-	public List<?> addresslist(MailVO vo) throws Exception {
+	public List<?> addresslist(AddressVO vo) throws Exception {      
 		return mailDAO.addresslist(vo);
+	}
+
+	/**
+	 * 글을 등록한다.
+	 * @param vo - 등록할 정보가 담긴 MailVO
+	 * @return 등록 결과
+	 * @exception Exception
+	 */
+	@Override
+	public String insertAddress(AddressVO vo) throws Exception {
+		LOGGER.debug(vo.toString());
+
+		/** ID Generation Service */
+//		String id = egovIdGnrService.getNextStringId();
+//		vo.setId(id);
+//		LOGGER.debug(vo.toString());
+
+		mailDAO.insertAddress(vo);
+		return vo.getIdx();
+	}
+	
+	/*주소록 상세 보기(수정페이지) */
+	
+	@Override
+	public AddressVO detailAddress(AddressVO vo) throws Exception {
+		AddressVO resultVO = mailDAO.detailAddress(vo);     
+		if (resultVO == null)                                  
+			throw processException("info.nodata.msg");         
+		return resultVO;                                       
+	}
+
+	/**
+	 * 글을 수정한다.
+	 * @param vo - 수정할 정보가 담긴 MailVO
+	 * @return void형
+	 * @exception Exception
+	 */
+	@Override
+	public void updateAddress(AddressVO vo) throws Exception {
+		mailDAO.updateAddress(vo);
+	}
+
+	/**
+	 * 글을 삭제한다.
+	 * @param vo - 삭제할 정보가 담긴 MailVO
+	 * @return void형
+	 * @exception Exception
+	 */
+	@Override
+	public void deleteAddress(AddressVO vo) throws Exception {
+		mailDAO.deleteAddress(vo);   
 	}
 	
 	
+	
+
 
 }
 

@@ -13,5 +13,6 @@
 		<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
 		<typeAlias alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
 		<typeAlias alias="mailVO" type="egovframework.example.sendmail.service.MailVO"/>
+		<typeAlias alias="AddressVO" type="egovframework.example.sendmail.service.AddressVO"/>
     </typeAliases>
 </configuration>

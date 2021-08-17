@@ -33,60 +33,69 @@ import egovframework.example.sendmail.service.SampleDefaultVO;
  *
  *  Copyright (C) by MOPAS All right reserved.
  */
-public class MailVO extends SampleDefaultVO {
+public class AddressVO extends SampleDefaultVO {
 
+//addressbook 이랑 mariadb 연결하기 (getter,setter)
 	private String idx;
-	private String title;
-	private String contents;
-	private String sender;		
-	private String receiver;	
-	private String indate;	
+	private String workplace;
+	private String dept;
+	private String addressName;
+	private String emailAddress;
+	private String pNumber;
+	private String memo;
+	private String indate;
+	private String userName2;
 	
+	
+	//로그인 세션
 	private String userId;
 	private String password;
 	private String userName;
 	
 	
-	//mailbox
-	private String boxName;
 	
 	
-
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
 	public String getIdx() {
 		return idx;
 	}
 	public void setIdx(String idx) {
 		this.idx = idx;
 	}
-	public String getTitle() {
-		return title;
+	public String getWorkplace() {
+		return workplace;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setWorkplace(String workplace) {
+		this.workplace = workplace;
 	}
-	public String getContents() {
-		return contents;
+	public String getDept() {
+		return dept;
 	}
-	public void setContents(String contents) {
-		this.contents = contents;
+	public void setDept(String dept) {
+		this.dept = dept;
 	}
-	public String getSender() {
-		return sender;
+	public String getAddressName() {
+		return addressName;
 	}
-	public void setSender(String sender) {
-		this.sender = sender;
+	public void setAddressName(String addressName) {
+		this.addressName = addressName;
 	}
-	public String getReceiver() {
-		return receiver;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
-	public void setReceiver(String receiver) {
-		this.receiver = receiver;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+	public String getpNumber() {
+		return pNumber;
+	}
+	public void setpNumber(String pNumber) {
+		this.pNumber = pNumber;
+	}
+	public String getMemo() {
+		return memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
 	}
 	public String getIndate() {
 		return indate;
@@ -94,6 +103,16 @@ public class MailVO extends SampleDefaultVO {
 	public void setIndate(String indate) {
 		this.indate = indate;
 	}
+	public String getUserName2() {
+		return userName2;
+	}
+	public void setUserName2(String userName2) {
+		this.userName2 = userName2;
+	}
+	
+	
+	
+	//로그인 세션
 	public String getUserId() {
 		return userId;
 	}
@@ -106,17 +125,14 @@ public class MailVO extends SampleDefaultVO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	//mailbox
-	public String getBoxName() {
-		return boxName;
+	public String getUserName() {
+		return userName;
 	}
-	public void setBoxName(String boxName) {
-		this.boxName = boxName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
-
+	
 
 
 }

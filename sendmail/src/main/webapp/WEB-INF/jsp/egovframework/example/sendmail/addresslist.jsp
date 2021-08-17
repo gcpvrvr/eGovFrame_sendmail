@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!-- 윗 부분 넣어줘야 한글 안깨짐 --> 
 <%@ include file ="../sendmail/layout/header.jsp" %>
@@ -34,12 +34,12 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">주소록  &nbsp;&nbsp;  <!-- 공백 띄어쓰기 -->
+                        <h6 class="m-0 font-weight-bold text-primary">주소록  &nbsp;&nbsp;  
 	                        <thead>
 	                            <tr>
-		                        <!-- add Button-->
-								<th><button class="btn btn-primary btn-xl disabled" id="addButton"
-									type="submit" onclick="addBtn();">등록</button></th>
+			                        <!-- add Button-->
+									<th><button class="btn btn-primary btn-xl disabled" id="addButton"
+										type="submit" onclick="addBtn();">등록</button></th>																							
 								</tr>
                          	 </thead>
                          </h6>
@@ -48,8 +48,8 @@
                       <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                           <thead>
-                            <tr>
-                              <th>No</th>
+                            <tr>	<!-- 밑에 input selectAll(this)함수 - 클릭시 전체선택 체크박스 구현 -->
+							  <th><input type="checkbox" id="select_all" onclick="selectAll(this)"></th>
                               <th>회사</th>
                               <th>부서</th>
                               <th>이름</th>
@@ -57,28 +57,35 @@
                               <th>전화번호</th>
                               <th>메모</th>
                               <th>날짜</th> 
-                              <th>편집</th>                           
-                           <!--    <th colspan="2" align="center">편집</th> 편집에 수정/삭제 들어가게... -->                     
+                              <th>편집</th>                                               
                             </tr>
                           </thead>
                           <tbody>						<!-- VO 파라미터 -->
 														<c:forEach var="result" items="${resultList}" varStatus="status">
-															<tr>
-																<td><c:out value="${result.idx2}"/></td>
+															<tr>	<!-- 하나씩 선택하는 체크박스 구현 -->
+																<td><input type="checkbox" name="select_each" onclick="selectEach()" value="${result.idx}"/></td>
 																<td><c:out value="${result.workplace}"/></td>
 																<td><c:out value="${result.dept}"/></td>
 																<td><c:out value="${result.addressName}"/></td>
 																<td><c:out value="${result.emailAddress}"/></td>
 																<td><c:out value="${result.pNumber}"/></td>
 																<td><c:out value="${result.memo}"/></td>
-																<td><c:out value="${result.indate2}"/></td>
-																<td><a href="javascript:view();">수정</a> &nbsp;/&nbsp;
-																	<a href="javascript:view();">삭제</a></td>	
+																<td><c:out value="${result.indate}"/></td>
+																<td><input type="button" value="수정" onclick="modify(${result.idx})" 
+																		class="btn btn-primary btn-xl btn-sm disabled"></input>
+																	<input type="button" value="삭제" onclick="del(${result.idx})" 
+																		class="btn btn-primary btn-xl btn-sm disabled"></input>
+																</td>	
 															</tr>
+														
 														</c:forEach>   
                           </tbody>
                         </table>
                       </div>
+                     		<!-- 체크박스 선택하여 삭제하는 button -->
+					  <button class="btn btn-primary" id="delBtn" disabled="disabled" onclick="deleteTmp();" 	
+							  style="margin: 0px 5px; background-color: #96a8ba; border-color: white; font-weight: bold; font-size: small;" >
+                    		  선택삭제</button>	 
                     </div>
                 </div>
             </div>
@@ -101,11 +108,29 @@
     </a>
 
 
-	<!-- 주소록의 등록버튼 작동 함수 -->
-	<script>
+	<!-- 주소록의 등록,수정,삭제버튼 함수 -->
+	
+	<script type="text/javascript">
+
 	function addBtn(){
         location.href = "<c:url value='/addressbook.do'/>";
         }
+	
+	function modify(idx) {
+		var chk = confirm("수정하시겠습니까?");
+		if (chk) {
+			location.href="<c:url value='/detailaddress.do?idx='/>"+idx;   
+		} 
+	} 
+
+ 	function del(idx) {
+		var chk = confirm("정말 삭제하시겠습니까?");
+		if (chk) {
+			location.href="<c:url value='/deleteAddress.do?idx='/>"+idx;   
+		} 
+	} 
+
+ 	
 	</script>
 	
 

@@ -39,8 +39,8 @@
                       <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                           <thead>
-                            <tr>
-                              <th>No</th>
+                            <tr>	<!-- 밑에 input selectAll(this)함수 - 클릭시 전체선택 체크박스 구현 -->
+                              <th><input type="checkbox" id="select_all" onclick="selectAll(this)"></th>
                               <th>제목</th>
                               <th>보낸이</th>
                               <th>받는이</th>
@@ -50,9 +50,9 @@
                           </thead>
                           <tbody>
 														<c:forEach var="result" items="${resultList}" varStatus="status">
-															<tr>
-																<td><a href="javascript:view();"><c:out value="${result.idx}"/></a></td>
-																<td><a href="javascript:view();"><c:out value="${result.title}"/></a></td>
+															<tr>		<!-- 하나씩 선택하는 체크박스 구현 -->
+																<td><input type="checkbox" name="select_each" onclick="selectEach()" value="${result.idx}"/></td>
+																<td><a href="javascript:view('${result.idx}');"><c:out value="${result.title}"/></a></td>
 																<td><c:out value="${result.sender}"/></td>
 																<td><c:out value="${result.receiver}"/></td>
 																<td><c:out value="${result.indate}"/></td>
@@ -62,6 +62,10 @@
                           </tbody>
                         </table>
                       </div>
+                     			 <!-- 체크박스 선택하여 삭제하는 button -->
+					  <button class="btn btn-primary" id="delBtn" disabled="disabled" onclick="deleteTmp();" 	
+							  style="margin: 0px 5px; background-color: #96a8ba; border-color: white; font-weight: bold; font-size: small;" >
+                    		  선택삭제</button>	 
                     </div>
                 </div>
             </div>
@@ -81,8 +85,17 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-
+    
+    <!-- 주소록의 등록,수정,삭제버튼 함수 -->
+    <script type="text/javascript">
+    
+    function view(idx){
+        location.href = "<c:url value='/detailwholebox.do'/>?idx="+idx;
+        }
+    
+    </script>
+    
+    
     <!-- Bootstrap core JavaScript-->
     <script src="<%=request.getContextPath()%>/css/bootstrap/vendor/jquery/jquery.min.js"></script>
     <script src="<%=request.getContextPath()%>/css/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

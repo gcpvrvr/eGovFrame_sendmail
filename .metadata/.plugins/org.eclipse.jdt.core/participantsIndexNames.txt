@@ -5,6 +5,8 @@ C:\eGovFrameDev-3.9.0-64bit\workspace\.metadata\.plugins\org.eclipse.jst.jsp.cor
 \board\src\main\java
 C:\eGovFrameDev-3.9.0-64bit\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3882650937.index
 \board\src\main\java
+C:\eGovFrameDev-3.9.0-64bit\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2405377754.index
+\sendmail\src\main\java
 C:\eGovFrameDev-3.9.0-64bit\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1362343654.index
 \sendmail\src\main\java
 C:\eGovFrameDev-3.9.0-64bit\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3205707987.index

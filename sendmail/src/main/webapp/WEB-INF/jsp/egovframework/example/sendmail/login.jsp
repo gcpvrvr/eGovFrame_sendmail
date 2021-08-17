@@ -58,7 +58,7 @@ function check() {
                                             Login
                                         </button>
                                         <hr>
-
+									</form>
                                 </div>
                             </div>
                         </div>

@@ -1,8 +1,10 @@
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>   
 
 <%
 	String userName = request.getSession().getAttribute("userName").toString();
-%>
+%>		<!-- userName 로그인을 위한 세션처리 -->
+
+
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -21,13 +23,23 @@
       <li class="nav-item active">
         <a class="nav-link" href="<c:url value='/wholebox.do?userName=${userName }'/>">
         <i class="far fa-envelope-open"></i>
-            <span>전체메일</span></a>
+            <span>전체메일함</span></a>
       </li>
-      <li class="nav-item active">
+
+  	  <li class="nav-item active">    
         <a class="nav-link" href="<c:url value='/inbox.do?userName=${userName }'/>">
         <i class="far fa-envelope-open"></i>
             <span>받은메일함</span></a>
       </li>
+      
+      <!-- 메일함 추가 생성 -->          
+      <li class="nav-item active">
+        <a class="nav-link" href="<c:url value='/mboxaddlist.do?userName=${userName }'/>">
+	    <i class="fas fa-folder-plus"></i>
+	        <span>메일함 추가</span>
+        </a>         
+      </li> 
+      
       <li class="nav-item active">
         <a class="nav-link" href="<c:url value='/outbox.do?userName=${userName }'/>">
         <i class="	far fa-envelope-open"></i> 
@@ -49,13 +61,14 @@
       </li>
       
        <!-- Divider -->
-      <hr class="sidebar-divider"> 
-      
+      <hr class="sidebar-divider">     
       <li class="nav-item active">
         <a class="nav-link" href="<c:url value='/addresslist.do?userName=${userName }'/>">
-        <i class="far fa-address-book"></i>
-          <span>주소록</span></a>
-      </li>      
+	        <i class="far fa-address-book"></i>
+	          <span>주소록</span>
+        </a>               
+      </li>   
+            
       
       <!-- Divider -->
       <hr class="sidebar-divider"> 

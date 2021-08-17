@@ -26,8 +26,29 @@
 		<result property="sender" column="sender"/>
 		<result property="receiver" column="receiver"/>
 		<result property="indate" column="indate"/>
+		<result property="boxName" column="boxName"/>
 	</resultMap> 
 <!-- resultMap은 안쓸껀데 이렇게도 던질 수 있다. -->
+
+
+	<!-- 주소록 -->
+	<resultMap id="Address" type="egovframework.example.sendmail.service.AddressVO">
+		<result property="idx" column="idx"/>
+		<result property="workplace" column="workplace"/>
+		<result property="dept" column="dept"/>
+		<result property="addressName" column="addressName"/>
+		<result property="emailAddress" column="emailAddress"/>
+		<result property="pNumber" column="pNumber"/>
+		<result property="memo" column="memo"/>
+		<result property="indate" column="indate"/>
+		<result property="userName2" column="userName2"/>
+		<result property="userId" column="userId"/>
+	</resultMap> 
+
+
+
+
+
 
 	<insert id="insertMail" parameterType="mailVO">
 
@@ -49,6 +70,25 @@
 		 value1 = #{value1, jdbcType=VARCHAR} VO에 int값 설정시 INT로 설정-->
 		 
 	</insert>
+	
+	
+	<!-- wholebox 상세  -->
+  	<select id="detailwholebox"  resultMap="mail">
+
+			SELECT
+				A.idx as idx
+				, A.title as title         
+				, A.contents as contents
+				, A.sender as sender          
+				, A.receiver as receiver
+			FROM 
+				tb_mail A
+			WHERE A.idx=#{idx}
+	
+	</select>
+	
+	
+	
 
 	<update id="updateMail">
 
@@ -104,7 +144,24 @@
 
 	</select>
 	
-		<select id="selectInboxList" parameterType="mailVO" resultType="egovMap">
+	<!--  inbox 변경 사용  -->
+	<select id="selectInboxList" parameterType="mailVO" resultType="egovMap">
+
+			SELECT
+				A.idx
+				, A.title
+				, A.contents
+				, A.sender
+				, A.receiver
+				, A.indate
+			FROM
+				tb_mail A 
+			WHERE A.sender=#{userName}
+
+	</select>
+		
+	<!-- inbox 원래 쿼리 	
+	<select id="selectInboxList" parameterType="mailVO" resultType="egovMap">
 
 			SELECT
 				A.idx
@@ -117,9 +174,10 @@
 				tb_mail A 
 			WHERE A.receiver=#{userName}
 
-	</select>
+	</select>  -->
 	
-		<select id="selectOutboxList" parameterType="mailVO" resultType="egovMap">
+	
+	<select id="selectOutboxList" parameterType="mailVO" resultType="egovMap">
 
 			SELECT
 				A.idx
@@ -162,28 +220,196 @@
 	
 	
 	
-<!-- addressbook 이랑 mariadb 연결하기 -->
-	<select id="addresslist" parameterType="mailVO" resultType="egovMap">
+	
+	<!-- mailbox메일함 입력 -->
+ 	<insert id="insertMailbox" parameterType="mailVO">
+
+			INSERT INTO tb_mailbox
+				( 													<!-- idx는 자동증가되므로 넣을 필요 없음. -->
+					boxName
+				  , user_id )
+			VALUES (
+				  #{boxName, jdbcType=VARCHAR}
+				  , #{userId, jdbcType=VARCHAR} ) 
+	</insert>  
+	
+	
+	<!-- 메일함추가하는 목록 조회 -->
+	<select id="mboxaddlist" parameterType="mailVO" resultType="egovMap">
 
 			SELECT
-				A.idx2
+				A.idx
+				, A.boxName
+				, A.user_id
+			FROM 
+				tb_mailbox A
+			WHERE 
+				A.user_id=#{userId}
+
+	</select>
+	
+	
+	<!-- 메일함 상세 보기(수정페이지) -->
+  	<select id="detailmailbox" resultMap="mail">  
+
+			SELECT
+				A.idx as idx
+ 				, A.boxName as boxName       
+				, A.user_id as userId
+			FROM 
+				tb_mailbox A
+			WHERE A.idx=#{idx}
+	
+	</select>	
+	
+	
+	<!-- 메일함 수정 -->
+   	<update id="updateMailbox">
+
+			UPDATE tb_mailbox
+			SET boxName=#{boxName, jdbcType=VARCHAR}
+												
+			WHERE idx=#{idx}
+
+	</update> 
+	 
+	
+	<!-- 메일함 삭제  -->
+	<delete id="deleteMailbox">
+
+			DELETE FROM tb_mailbox
+			WHERE idx=#{idx}
+
+	</delete>
+	
+	
+	<!-- mailbox메일함 셀렉트박스 조회   -->
+	<select id="selectMboxAdd" parameterType="mailVO" resultType="egovMap">
+
+			SELECT
+				A.boxName
+			FROM 
+				tb_mailbox A
+			WHERE 
+				A.user_id=#{userId}
+
+	</select>
+	
+	
+		<!-- 메일 검색조회 페이지 -->
+	<select id="searchmail" parameterType="mailVO" resultType="egovMap">
+				
+			SELECT
+				A.idx
+				, A.title
+				, A.contents
+				, A.sender
+				, A.receiver
+				, A.indate
+			FROM 
+				tb_mail A 
+			WHERE A.sender=#{userName}
+
+	</select>  
+	
+
+	
+	
+	<!-- 주소록 -->
+	
+	<!-- 주소록 목록 조회 -->
+	<select id="addresslist" parameterType="addressVO" resultType="egovMap">
+
+			SELECT
+				A.idx
 				, A.workplace
 				, A.dept
 				, A.address_name
 				, A.email_address
 				, A.p_number
 				, A.memo
-				, A.indate2
+				, A.indate
+				, A.user_name2
 			FROM 
 				tb_addressbook A
+			WHERE 
+				A.user_name2=#{userName}
 
-	</select>
+	</select> 
+	
+	
+	<!-- 주소록 입력 -->
+ 	<insert id="insertAddress" parameterType="addressVO">
+
+			INSERT INTO tb_addressbook
+				( 													<!-- idx는 자동증가되므로 넣을 필요 없음. -->
+					workplace
+				  , dept
+				  , address_name
+				  , email_address
+				  , p_number
+				  , memo 
+				  , indate 
+				  , user_name2 )
+			VALUES (
+				  #{workplace, jdbcType=VARCHAR}
+				  , #{dept, jdbcType=VARCHAR}
+				  , #{addressName, jdbcType=VARCHAR}      
+				  , #{emailAddress, jdbcType=VARCHAR}
+				  , #{pNumber, jdbcType=VARCHAR}
+				  , #{memo, jdbcType=VARCHAR}
+				  , SYSDATE()
+				  , #{userName2, jdbcType=VARCHAR} ) 
+	</insert>    
+<!-- 값이 없을때 널값을 넣어도 오류가 안나는 mybatis 규칙 : 
+		 value1 = #{value1, jdbcType=VARCHAR} VO에 int값 설정시 INT로 설정 -->
+		 
+		 
+	<!-- 주소록 상세 보기(수정페이지) -->
+  	<select id="detailAddress"  resultMap="Address">
+
+			SELECT
+				A.idx as idx
+				, A.workplace as workplace
+				, IFNULL(A.dept, "") as dept          
+				, A.address_name as addressName
+				, A.email_address as emailAddress
+				, IFNULL(A.p_number, "") as pNumber   
+				, IFNULL(A.memo, "") as memo          
+				, A.indate as indate
+			FROM 
+				tb_addressbook A
+			WHERE A.idx=#{idx}
+	
+	</select>	 
+
+	
+	<!-- 주소록 수정 -->	
+  	<update id="updateAddress">
+
+			UPDATE tb_addressbook
+			SET workplace=#{workplace, jdbcType=VARCHAR}
+				, dept=#{dept, jdbcType=VARCHAR}
+				, address_name=#{addressName, jdbcType=VARCHAR}
+				, email_address=#{emailAddress, jdbcType=VARCHAR}
+				, p_number=#{pNumber, jdbcType=VARCHAR}
+				, memo=#{memo, jdbcType=VARCHAR}
+				
+			WHERE idx=#{idx}
+
+	</update> 
+	
+	<!-- 주소록 삭제  -->
+	<delete id="deleteAddress">
+
+			DELETE FROM tb_addressbook
+			WHERE idx=#{idx}
+
+	</delete>
 	
 	
 	
-	
-	
-	
+
 	
 	
 
